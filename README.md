@@ -60,7 +60,7 @@ If you want to build and run containers in the background)
 * To interact with a running container in the terminal, type this in the terminal:
     ```docker exec -it <container_name>  "bash"```
     
-* To remove all stop and running containers,, type this in the terminal:
+* To remove all stop and running containers, type this in the terminal:
     ```docker stop $(docker ps -a -q)```
     ```docker rm $(docker ps -a -q)```
     
