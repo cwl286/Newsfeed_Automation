@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0">
+  <channel>
+    <title>NYT &gt; Technology</title>
+    <link>https://www.nytimes.com/section/technology?emc=rss&amp;partner=rss</link>
+    <atom:link href="https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml" rel="self" type="application/rss+xml"></atom:link>
+    <description></description>
+    <language>en-us</language>
+    <copyright>Copyright 2019 The New York Times Company</copyright>
+    <lastBuildDate>Tue, 27 Aug 2019 12:54:20 +0000</lastBuildDate>
+    <image>
+      <title>NYT &gt; Technology</title>
+      <url>https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png</url>
+      <link>https://www.nytimes.com/section/technology?emc=rss&amp;partner=rss</link>
+    </image>
+    <item>
+      <title>How Uber Got Lost</title>
+      <link>https://www.nytimes.com/2019/08/23/business/how-uber-got-lost.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/23/business/how-uber-got-lost.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/23/business/how-uber-got-lost.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The once-swaggering company is losing more money and growing more slowly than ever. What happened?</description>
+      <dc:creator>Mike Isaac</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 17:24:18 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Uber Technologies Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Kalanick, Travis</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Khosrowshahi, Dara</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Car Services and Livery Cabs</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mobile Applications</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Start-ups</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Uber Eats</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Lyft Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/25/business/25uberlost_dress/25uberlost_dress-moth.jpg" width="151"></media:content>
+      <media:credit>Max Guther</media:credit>
+    </item>
+    <item>
+      <title>Google Tries to Corral Its Staff After Ugly Internal Debates</title>
+      <link>https://www.nytimes.com/2019/08/23/technology/google-culture-rules.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/23/technology/google-culture-rules.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/23/technology/google-culture-rules.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The tech company, telling its employees to “stop disrupting the workday,” issued new workplace rules designed to rein in its freewheeling culture.</description>
+      <dc:creator>Jack Nicas</dc:creator>
+      <pubDate>Fri, 23 Aug 2019 20:21:27 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Google Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Workplace Environment</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/23/business/23GOOGLE1/23GOOGLE1-moth.jpg" width="151"></media:content>
+      <media:credit>Amy Osborne/Agence France-Presse — Getty Images</media:credit>
+      <media:description>Google is setting new rules to restrain freewheeling discussions among its employees during their work hours.</media:description>
+    </item>
+    <item>
+      <title>Facebook Bans Ads From The Epoch Times</title>
+      <link>https://www.nytimes.com/2019/08/23/technology/facebook-ads-epoch-times.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/23/technology/facebook-ads-epoch-times.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/23/technology/facebook-ads-epoch-times.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The social network has struggled to implement a consistent political advertising policy as groups appear able to get around its transparency rules.</description>
+      <dc:creator>Davey Alba</dc:creator>
+      <pubDate>Fri, 23 Aug 2019 21:07:10 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Facebook Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Epoch Times</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Censorship</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Online Advertising</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">News and News Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Political Advertising</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Falun Gong</category>
+    </item>
+    <item>
+      <title>The Week in Tech: Facebook’s First Step Toward Treating Our Data Better</title>
+      <link>https://www.nytimes.com/2019/08/23/technology/big-tech-data.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/23/technology/big-tech-data.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/23/technology/big-tech-data.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The social network’s latest privacy feature at least lets us imagine how we could better control our data in the future.</description>
+      <dc:creator>Jamie Condliffe</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 02:56:33 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Privacy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Facebook Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Google Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/23/business/23technewsletter/23technewsletter-moth.jpg" width="151"></media:content>
+      <media:credit>Marcio Jose Sanchez/Associated Press</media:credit>
+      <media:description>Mark Zuckerberg of Facebook, which introduced a data privacy tool this week.</media:description>
+    </item>
+    <item>
+      <title>Is It Time to Upend the Periodic Table?</title>
+      <link>https://www.nytimes.com/2019/08/27/science/periodic-table-elements-chemistry.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/27/science/periodic-table-elements-chemistry.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/27/science/periodic-table-elements-chemistry.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The iconic chart of elements has served chemistry well for 150 years. But it’s not the only option out there, and scientists are pushing its limits.</description>
+      <dc:creator>Siobhan Roberts</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 12:09:50 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Chemistry</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Physics</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">American Chemical Society</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Case Western Reserve University</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">United Nations Educational, Scientific and Cultural Organization</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">your-feed-science</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/27/science/27PERIODICTABLE/27PERIODICTABLE-moth.jpg" width="151"></media:content>
+      <media:credit>Alex Eben Meyer</media:credit>
+    </item>
+    <item>
+      <title>Cadillac’s Last Stand? Storied Brand Aims (Again) for Revival</title>
+      <link>https://www.nytimes.com/2019/08/27/business/cadillac-brand.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/27/business/cadillac-brand.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/27/business/cadillac-brand.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Once the epitome of luxury, the high-end General Motors line is attempting another makeover to catch up with rivals that have overtaken it.</description>
+      <dc:creator>Neal E. Boudette</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 11:12:37 +0000</pubDate>
+      <category domain="">Cadillac (vehicle)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">General Motors</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Automobiles</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Driverless and Semiautonomous Vehicles</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Sports Utility Vehicles and Light Trucks</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Electric and Hybrid Vehicles</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Luxury Goods and Services</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Advertising and Marketing</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Tesla Motors Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/23/business/00cadillac3/00cadillac3-moth.jpg" width="151"></media:content>
+      <media:credit>Nick Hagen for The New York Times</media:credit>
+      <media:description>A Cadillac CT6 in Detroit. Although it is equipped with the Super Cruise driver-assistance system, the model’s sales have fallen 60 percent this year, and General Motors may halt production. </media:description>
+    </item>
+    <item>
+      <title>Lawsuit Over Computer Chips Invokes Trade War With China</title>
+      <link>https://www.nytimes.com/2019/08/26/technology/globalfoundries-tsmc-lawsuit-computer-chips.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/technology/globalfoundries-tsmc-lawsuit-computer-chips.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/technology/globalfoundries-tsmc-lawsuit-computer-chips.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Globalfoundries has accused T.S.M.C., a competitor in Taiwan, of infringing on 16 patents in a suit that could also affect companies like Apple and Google.</description>
+      <dc:creator>Don Clark</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 21:52:07 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computer Chips</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Trade and World Market</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Inventions and Patents</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Suits and Litigation (Civil)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Apple Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">TSMC</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Globalfoundries</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/business/26chip/26chip-moth.jpg" width="151"></media:content>
+      <media:credit>Ashley Pon/Bloomberg</media:credit>
+      <media:description>The Taiwan Semiconductor Manufacturing Company’s headquarters in Hsinchu, Taiwan. The company is a huge manufacturer of chips designed by other companies.</media:description>
+    </item>
+    <item>
+      <title>Qualcomm Wins Reprieve in F.T.C. Antitrust Case With Appeals Court Ruling</title>
+      <link>https://www.nytimes.com/2019/08/23/technology/qualcomm-ftc-antitrust-injunction.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/23/technology/qualcomm-ftc-antitrust-injunction.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/23/technology/qualcomm-ftc-antitrust-injunction.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>A federal appeals court ruled that the chip maker did not have to modify key business practices while the court reviews a lower-court ruling against the company.</description>
+      <dc:creator>Don Clark</dc:creator>
+      <pubDate>Fri, 23 Aug 2019 20:09:45 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Cellular Telephones</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Antitrust Laws and Competition Issues</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Decisions and Verdicts</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computer Chips</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Wireless Communications</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Royalties</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Smartphones</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Federal Trade Commission</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Qualcomm Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Koh, Lucy H</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/23/business/23qualcomm2/23qualcomm2-moth.jpg" width="151"></media:content>
+      <media:credit>Aly Song/Reuters</media:credit>
+      <media:description>A federal appeals court stayed a lower-court ruling that would force Qualcomm to alter business practices the Federal Trade argues are anticompetitive.</media:description>
+    </item>
+    <item>
+      <title>As Amazon Fires Spread, So Do the Misleading Photos</title>
+      <link>https://www.nytimes.com/2019/08/23/world/americas/amazon-rainforest-fire-photos.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/23/world/americas/amazon-rainforest-fire-photos.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/23/world/americas/amazon-rainforest-fire-photos.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The fires are real. But the photographs that celebrities and politicians are sharing? Well, it depends.</description>
+      <dc:creator>Niraj Chokshi</dc:creator>
+      <pubDate>Sat, 24 Aug 2019 03:42:22 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Brazil</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Fires and Firefighters</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Photography</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ronaldo, Cristiano</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">DiCaprio, Leonardo</category>
+    </item>
+    <item>
+      <title>Snapchat’s Disappearing Act Leaves Venice Beach Searching for Its Future</title>
+      <link>https://www.nytimes.com/2019/08/23/style/snapchat-venice-resistance.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/23/style/snapchat-venice-resistance.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/23/style/snapchat-venice-resistance.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Snap changed social media — and Venice, Calif. — for good. What’s next?</description>
+      <dc:creator>Daniel Hernandez</dc:creator>
+      <pubDate>Sat, 24 Aug 2019 05:18:26 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Snap Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Venice Beach (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Relocation of Business</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Real Estate (Commercial)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Gentrification</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hippies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/23/fashion/23VENICE8/23VENICE8-moth-v2.jpg" width="151"></media:content>
+      <media:credit>Adam Amengual for The New York Times</media:credit>
+      <media:description>Street performers have had a big role in shaping Venice’s creative ethos.</media:description>
+    </item>
+    <item>
+      <title>YouTube Disables 210 Channels That Spread Disinformation About Hong Kong Protests</title>
+      <link>https://www.nytimes.com/2019/08/22/technology/youtube-hong-kong-protests-china-disinformation.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/22/technology/youtube-hong-kong-protests-china-disinformation.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/22/technology/youtube-hong-kong-protests-china-disinformation.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Days after Facebook and Twitter cracked down on China-backed accounts that were spreading such disinformation, YouTube did the same.</description>
+      <dc:creator>Kate Conger</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 20:24:13 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">YouTube.com</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hong Kong Protests (2019)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Rumors and Misinformation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Google Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Video Recordings, Downloads and Streaming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Hong Kong</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/22/business/22youtube/22youtube-moth.jpg" width="151"></media:content>
+      <media:credit>Dado Ruvic/Reuters</media:credit>
+    </item>
+    <item>
+      <title>Soap, Detergent and Even Laxatives Could Turbocharge a Battery Alternative</title>
+      <link>https://www.nytimes.com/2019/08/22/science/batteries-supercapacitors.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/22/science/batteries-supercapacitors.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/22/science/batteries-supercapacitors.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Researchers are trying to develop options to lithium-ion and other batteries in a quest for quick bursts of power and extended energy storage.</description>
+      <dc:creator>XiaoZhi Lim</dc:creator>
+      <pubDate>Sat, 24 Aug 2019 09:58:09 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Batteries</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Lithium (Metal)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Cleansers, Detergents and Soaps</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Alternative and Renewable Energy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Mao, Xianwen</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Nature Materials (Journal)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Massachusetts Institute of Technology</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Cornell University</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">your-feed-science</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/21/science/21TB-BATTERIES-promo/00BATTERIES-02-moth.jpg" width="151"></media:content>
+      <media:credit>Xianwen Mao</media:credit>
+    </item>
+    <item>
+      <title>Alibaba Postpones Hong Kong Listing as Protests Roil Markets</title>
+      <link>https://www.nytimes.com/2019/08/22/business/alibaba-hong-kong-ipo.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/22/business/alibaba-hong-kong-ipo.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/22/business/alibaba-hong-kong-ipo.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The Chinese e-commerce giant delayed plans to sell potentially billions of dollars worth of shares in the market, which has fallen as tensions have worsened.</description>
+      <dc:creator>Michael J. de la Merced and Alexandra Stevenson</dc:creator>
+      <pubDate>Thu, 22 Aug 2019 12:07:25 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Alibaba Group Holding Ltd</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Hong Kong</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hong Kong Protests (2019)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/23/business/00alibaba1-print/00alibaba01-moth.jpg" width="151"></media:content>
+      <media:credit>Aly Song/Reuters</media:credit>
+      <media:description>The headquarters of Alibaba, in the eastern Chinese city of Hangzhou. The e-commerce giant has a number of reasons to stick to its plan to list shares in Hong Kong.</media:description>
+    </item>
+    <item>
+      <title>Inside India’s Messy Electric Vehicle Revolution</title>
+      <link>https://www.nytimes.com/2019/08/22/technology/india-electric-vehicle-rickshaw.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/22/technology/india-electric-vehicle-rickshaw.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/22/technology/india-electric-vehicle-rickshaw.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>A million electric rickshaws sprang up out of nowhere and are now being used by 60 million people a day. The government and vehicle makers are struggling to catch up.</description>
+      <dc:creator>Saumya Khandelwal, Vindu Goel and Karan Deep Singh</dc:creator>
+      <pubDate>Sat, 24 Aug 2019 02:56:27 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Electric and Hybrid Vehicles</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Traffic Accidents and Safety</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Pedicabs and Rickshaws</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Batteries</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Taxicabs and Taxicab Drivers</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Start-ups</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Ola Cabs</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">India</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Delhi (India)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">SmartE (Treasure Vase Ventures Private Ltd)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/07/04/business/00rickshaw1/00rickshaw1-moth.jpg" width="151"></media:content>
+      <media:credit>Saumya Khandelwal for The New York Times</media:credit>
+      <media:description>Electric rickshaw drivers must fight for space with buses and other vehicles outside Delhi metro stations.</media:description>
+    </item>
+    <item>
+      <title>How a Conservative News Site Thrived on Facebook and Google</title>
+      <link>https://www.nytimes.com/2019/08/22/us/western-journal-highlights.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/22/us/western-journal-highlights.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/22/us/western-journal-highlights.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The Western Journal has had one of the biggest online audiences. But it now finds itself clashing with Silicon Valley tech giants. Here are highlights from a Times investigation.</description>
+      <dc:creator>Daniel Victor</dc:creator>
+      <pubDate>Fri, 23 Aug 2019 02:53:29 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Western Journal</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">News and News Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Apple Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Facebook Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Google Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Google News</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/22/world/22xp-brownstakeaways-1/22xp-brownstakeaways-1-moth.jpg" width="151"></media:content>
+      <media:credit>Stuart Isett for The New York Times</media:credit>
+      <media:description>Floyd G. Brown, right, a longtime conservative political activist, in 2008.</media:description>
+    </item>
+    <item>
+      <title>Instagram’s Chain-Letter Uprising</title>
+      <link>https://www.nytimes.com/2019/08/21/style/instagram-photo-law-meme.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/style/instagram-photo-law-meme.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/style/instagram-photo-law-meme.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Hordes of confused Instagrammers are trying to declare sovereignty from Instagram. Do they accidentally have a point?</description>
+      <dc:creator>John Herrman</dc:creator>
+      <pubDate>Thu, 22 Aug 2019 19:39:34 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Instagram Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hoaxes and Pranks</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/09/20/fashion/20copypasta-1/20copypasta-1-moth-v2.jpg" width="151"></media:content>
+      <media:credit>Illustration by The New York Times</media:credit>
+    </item>
+    <item>
+      <title>YouTuber’s Surprise Discovery Gives Parents Last Look at Son They Lost</title>
+      <link>https://www.nytimes.com/2019/08/21/us/gopro-richard-ragland-death-drowning.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/us/gopro-richard-ragland-death-drowning.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/us/gopro-richard-ragland-death-drowning.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Rich Abernathy was filming a dive for YouTube when he found an old GoPro partly buried in the muck. “It’s like he’s right here,” said Robin McCrear of seeing the video footage of her son, Richard Lee Ragland III, who died in 2017.</description>
+      <dc:creator>Jacey Fortin</dc:creator>
+      <pubDate>Thu, 22 Aug 2019 22:27:52 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Video Recordings, Downloads and Streaming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ragland, Richard Lee III</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Diving and Divers</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Cameras</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Drownings</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">GoPro</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">YouTube.com</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Tennessee</category>
+    </item>
+    <item>
+      <title>How to Turn an iPhone Into a Work-Only Tool</title>
+      <link>https://www.nytimes.com/2019/08/21/technology/personaltech/how-to-turn-an-iphone-into-a-work-only-tool.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/technology/personaltech/how-to-turn-an-iphone-into-a-work-only-tool.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/technology/personaltech/how-to-turn-an-iphone-into-a-work-only-tool.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>To prevent distractions, Conor Dougherty, an economics writer, dumped social media and anything fun — even his browser — from his smartphone.</description>
+      <dc:creator>Conor Dougherty</dc:creator>
+      <pubDate>Thu, 22 Aug 2019 14:59:04 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mobile Applications</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">News and News Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Smartphones</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">iPhone</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Work-Life Balance</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Books and Literature</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">New York Times</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/21/business/21techusing1/21techusing1-moth.jpg" width="151"></media:content>
+      <media:credit>Jim Wilson/The New York Times</media:credit>
+      <media:description>Connor Dougherty maintains his mobile phone as a work tool, packing it with news, maps and other service apps, but no social media. “I find this keeps me mostly sane and mostly productive,” he said.</media:description>
+    </item>
+    <item>
+      <title>M.I.T. Media Lab in Crisis After 2 Scholars Vow to Leave Over Epstein Ties</title>
+      <link>https://www.nytimes.com/2019/08/21/business/media/mit-jeffrey-epstein.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/business/media/mit-jeffrey-epstein.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/business/media/mit-jeffrey-epstein.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>After last week’s apology from the research center’s director, Joichi Ito, Ethan Zuckerman and J. Nathan Matias said they were protesting the institute’s connection to the financier.</description>
+      <dc:creator>Tiffany Hsu, Marc Tracy and Emily Flitter</dc:creator>
+      <pubDate>Wed, 21 Aug 2019 23:42:49 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">MIT Media Lab</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Zuckerman, Ethan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Matias, J Nathan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Epstein, Jeffrey E (1953- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Ito, Joichi</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Minsky, Marvin</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Massachusetts Institute of Technology</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Sex Crimes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Child Abuse and Neglect</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Human Trafficking</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Prostitution</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Philanthropy</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/21/world/21medialab01/21medialab01-moth.jpg" width="151"></media:content>
+      <media:credit>Britta Pedersen/DPA, via Associated Press</media:credit>
+      <media:description>Ethan Zuckerman, an associate professor at the M.I.T. Media Lab, said he would leave the research institute over its ties to Jeffrey Epstein.</media:description>
+    </item>
+    <item>
+      <title>How Many Triangles Are There? Here’s How to Solve the Puzzle</title>
+      <link>https://www.nytimes.com/2019/08/21/science/math-equation-triangles-pemdas.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/science/math-equation-triangles-pemdas.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/science/math-equation-triangles-pemdas.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Counting will get you nowhere. Try a little combinatorics instead.</description>
+      <dc:creator>Kenneth Chang</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 03:39:21 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mathematics</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Carnegie Mellon University</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Puzzles</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Loh, Po-Shen</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">your-feed-science</category>
+    </item>
+    <item>
+      <title>Hi, Alexa. How Do I Stop You From Listening In On Me?</title>
+      <link>https://www.nytimes.com/2019/08/21/technology/personaltech/alexa-siri-google-assistant-listen.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/technology/personaltech/alexa-siri-google-assistant-listen.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/technology/personaltech/alexa-siri-google-assistant-listen.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Humans help train artificial intelligence, so someone may be listening to what you tell Siri, Google Assistant or Alexa. Here’s what to do if you have a problem with that.</description>
+      <dc:creator>Brian X. Chen</dc:creator>
+      <pubDate>Thu, 22 Aug 2019 03:12:08 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Voice Recognition Systems</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Privacy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Artificial Intelligence</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Amazon.com Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Apple Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Google Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/22/business/21techfix/21techfix-moth.jpg" width="151"></media:content>
+      <media:credit>Glenn Harvey</media:credit>
+    </item>
+    <item>
+      <title>Scorsese’s New Mob Epic, ‘The Irishman,’ Has Netflix and Theaters at Odds</title>
+      <link>https://www.nytimes.com/2019/08/21/business/media/netflix-scorsese-the-irishman.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/business/media/netflix-scorsese-the-irishman.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/business/media/netflix-scorsese-the-irishman.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Will the movie, which stars Robert De Niro, come to a theater near you? After months of talks, there is still no resolution.</description>
+      <dc:creator>Nicole Sperling</dc:creator>
+      <pubDate>Thu, 22 Aug 2019 03:10:06 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Movies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">The Irishman (Movie)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Scorsese, Martin</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Netflix Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Sarandos, Ted</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">National Assn of Theater Owners</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Stuber, Scott</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Video Recordings, Downloads and Streaming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">AMC Entertainment Holding Inc.</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Cineplex Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/19/business/00netflixscorsese/00netflixscorsese-moth-v2.jpg" width="151"></media:content>
+      <media:credit>Victoria Will/Invision, via Associated Press</media:credit>
+      <media:description>Martin Scorsese’s next movie, “The Irishman,” a decade-spanning epic starring Robert De Niro, is coming soon from Netflix.</media:description>
+    </item>
+    <item>
+      <title>Hollywood’s Premier Fashion Camp, for Ages 6 and Up</title>
+      <link>https://www.nytimes.com/2019/08/21/style/fashion-camp-kids-los-angeles.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/style/fashion-camp-kids-los-angeles.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/style/fashion-camp-kids-los-angeles.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Kids spend a week learning to sew and self-brand, and then, of course, they walk the runway.</description>
+      <dc:creator>Arit John</dc:creator>
+      <pubDate>Thu, 22 Aug 2019 22:55:34 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Fashion and Apparel</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Children and Childhood</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/21/fashion/21FashionKids5/21FashionKids5-moth-v3.jpg" width="151"></media:content>
+      <media:credit>Michelle Groskopf for The New York Times</media:credit>
+      <media:description>A week of fashion camp ends with an elaborate runway show, put on for parents and friends.</media:description>
+    </item>
+    <item>
+      <title>The Collective Memory of American Shoppers</title>
+      <link>https://www.nytimes.com/2019/08/21/style/retail-facebook-groups-reddit.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/style/retail-facebook-groups-reddit.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/style/retail-facebook-groups-reddit.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>On Facebook and Reddit, retail-focused groups remember the heyday of malls and share stories of shuttered department stores.</description>
+      <dc:creator>Kelsey Lawrence</dc:creator>
+      <pubDate>Fri, 23 Aug 2019 17:58:56 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Shopping and Retail</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Facebook Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/22/fashion/16retailgroups-mall-1960s/16retailgroups-mall-1960s-moth.jpg" width="151"></media:content>
+      <media:credit>H. Armstrong Roberts/Retrofile, via Getty Images</media:credit>
+      <media:description>Remember what malls were like in the 1960s? Some folks in retail-focused Facebook groups sure do.</media:description>
+    </item>
+    <item>
+      <title>Inside America’s Dysfunctional Trillion-Dollar Fighter-Jet Program</title>
+      <link>https://www.nytimes.com/2019/08/21/magazine/f35-joint-strike-fighter-program.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/21/magazine/f35-joint-strike-fighter-program.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/21/magazine/f35-joint-strike-fighter-program.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The F-35 was once the Pentagon’s high-profile problem child. Has it finally moved past its reputation of being an overhyped and underperforming warplane?</description>
+      <dc:creator>Valerie Insinna</dc:creator>
+      <pubDate>Wed, 21 Aug 2019 13:43:43 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">F-35 Airplane</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Aviation Accidents, Safety and Disasters</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">United States Air Force</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Defense Department</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Lockheed Martin Corporation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Military Aircraft</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Pilots</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Military Bases and Installations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">McCain, John</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/21/magazine/21atwar-F35-image-04/21atwar-F35-image-04-moth-v2.jpg" width="151"></media:content>
+      <media:credit>Anne Rearick for The New York Times</media:credit>
+      <media:description>Airmen performing pre- and postflight inspections on the F-35A Lightning IIs at Mountain Home Air Force Base in Idaho.</media:description>
+    </item>
+    <item>
+      <title>FogCam Is Signing Off in San Francisco</title>
+      <link>https://www.nytimes.com/2019/08/20/us/san-francisco-fogcam-shut-down.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/20/us/san-francisco-fogcam-shut-down.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/20/us/san-francisco-fogcam-shut-down.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Long before streaming video, it captured images of campus life every 20 seconds. The quirky project, believed to be the longest-running public webcam, will shut down at the end of August.</description>
+      <dc:creator>Laura M. Holson</dc:creator>
+      <pubDate>Wed, 21 Aug 2019 03:47:27 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Colleges and Universities</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Video Recordings, Downloads and Streaming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">San Francisco (Calif)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">San Francisco State University</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Schwartz, Jeff (Webdog)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Wong, Dan (Danno)</category>
+      <category domain="">FogCam</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/20/business/20xp-fogcam/20xp-fogcam-moth.jpg" width="151"></media:content>
+      <media:description>Two grad students at San Francisco State created the FogCam in the early days of the web and kept it going for 25 years.</media:description>
+    </item>
+    <item>
+      <title>‘I’m Sick of Seeing My Face,’ Says the Internet’s Kombucha Connoisseur</title>
+      <link>https://www.nytimes.com/2019/08/20/style/kombucha-internet-viral.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/20/style/kombucha-internet-viral.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/20/style/kombucha-internet-viral.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>A woman’s taste test captured the fancy of the internet. Her rapid evolution of expressions may be why.</description>
+      <dc:creator>Nicholas Bogel-Burroughs</dc:creator>
+      <pubDate>Fri, 23 Aug 2019 20:36:52 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Video Recordings, Downloads and Streaming</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Twitter</category>
+    </item>
+    <item>
+      <title>How Should Big Tech Be Reined In? Here Are 4 Prominent Ideas</title>
+      <link>https://www.nytimes.com/2019/08/20/technology/big-tech-reined-in.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/20/technology/big-tech-reined-in.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/20/technology/big-tech-reined-in.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Some critics of the industry want to see the businesses broken up. Others would like to strengthen regulation of Silicon Valley. And there are shades of gray.</description>
+      <dc:creator>Steve Lohr</dc:creator>
+      <pubDate>Wed, 21 Aug 2019 02:20:11 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Antitrust Laws and Competition Issues</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Regulation and Deregulation of Industry</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Amazon.com Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Apple Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Facebook Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Google Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/18/business/00techremedies1/00techremedies1-moth.jpg" width="151"></media:content>
+      <media:credit>Valerie Chiang for The New York Times</media:credit>
+      <media:description>Tim Wu, a Columbia Law School professor, believes Facebook should have to shed some of the companies it has bought. “The remedy is straightforward,” he said.</media:description>
+    </item>
+    <item>
+      <title>Welcome to McDonald’s. Would You Like a Podcast With Those Fries?</title>
+      <link>https://www.nytimes.com/2019/08/20/business/media/branded-podcasts.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/20/business/media/branded-podcasts.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/20/business/media/branded-podcasts.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>With podcasts rising in popularity, it’s no surprise that companies are producing their own. What’s more surprising is that people are actually listening to them.</description>
+      <dc:creator>David Yaffe-Bellany</dc:creator>
+      <pubDate>Wed, 21 Aug 2019 02:18:43 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Podcasts</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Advertising and Marketing</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">McDonald&#39;s Corporation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Trader Joe&#39;s</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Gizmodo</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Gimlet Media</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/03/business/00companypods/00companypods-moth.jpg" width="151"></media:content>
+      <media:credit>John J. Custer</media:credit>
+    </item>
+    <item>
+      <title>Facebook’s New Tool Lets You See Which Apps and Websites Tracked You</title>
+      <link>https://www.nytimes.com/2019/08/20/technology/facebook-tool-privacy-apps-websites.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/20/technology/facebook-tool-privacy-apps-websites.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/20/technology/facebook-tool-privacy-apps-websites.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The tool is a response to criticism that Facebook has faced over how it safeguards its users’ privacy.</description>
+      <dc:creator>Mike Isaac</dc:creator>
+      <pubDate>Wed, 21 Aug 2019 02:22:57 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Mobile Applications</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Computers and the Internet</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Online Advertising</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Privacy</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Advertising and Marketing</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Facebook Inc</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/20/business/20fbprivacy/20fbprivacy-moth.jpg" width="151"></media:content>
+      <media:credit>Stephen Lam/Reuters</media:credit>
+      <media:description>Mark Zuckerberg, Facebook’s chief executive, has pledged to give users more control over their personal information.</media:description>
+    </item>
+    <item>
+      <title>China’s Soft-Power Failure: Condemning Hong Kong’s Protests</title>
+      <link>https://www.nytimes.com/2019/08/20/business/china-hong-kong-social-media-soft-power.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/20/business/china-hong-kong-social-media-soft-power.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/20/business/china-hong-kong-social-media-soft-power.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Beijing wants greater sway over global public opinion. Instead, its propaganda outlets make Chinese leaders look like bullies.</description>
+      <dc:creator>Li Yuan</dc:creator>
+      <pubDate>Wed, 21 Aug 2019 10:05:38 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Hong Kong Protests (2019)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Hong Kong</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Propaganda</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Social Media</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Censorship</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Polls and Public Opinion</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Facebook Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Twitter</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/20/business/20newworld1/merlin_159409440_22973e94-0b15-4ef0-9221-a4e6295aac7e-moth.jpg" width="151"></media:content>
+      <media:credit>Lam Yik Fei for The New York Times</media:credit>
+      <media:description>Demonstrators gathered at Victoria Park in Hong Kong over the weekend.</media:description>
+    </item>
+  </channel>
+</rss>

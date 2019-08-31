@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{% block title %}{% endblock %}</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/font-awesome.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/animate.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/font.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/li-scroller.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/slick.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/jquery.fancybox.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/theme.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/style.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/jquery-ui.css') }}">
+<!--[if lt IE 9]>
+<script src="{{ url_for('static', filename='assets/js/html5shiv.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/respond.min.js') }}"></script>
+<![endif]-->
+
+
+{% block style %}{% endblock %}
+    
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  <header id="header">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_top">
+          <div class="header_top_left">
+            <ul class="top_nav">
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('admin') }}">Admin</a></li>
+              <li><a href="{{ url_for('json_page')}}">JSON</a></li>
+            </ul>
+          </div>
+          <div class="header_top_right">
+            <p>{{current_date}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="header_bottom">
+        </div>
+      </div>
+    </div>
+    </header>
+
+  <section id="sliderSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        {% block slick_slider_left_content %}{% endblock %}         
+        
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        {% block slick_slider_right_content %}{% endblock %}      
+      </div>
+    </div>
+  </section>
+  <section id="contentSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">          
+        {% block contentSection_left_content %}{% endblock %}
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">          
+        {% block contentSection_right_content %}{% endblock %}
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInLeftBig">
+            <h2>About</h2>
+            <p>This website is a simple demo to display newsfeeds automation about crawling data from resources into a database and importing feeds from the database. It is implemented by using Docker-compose, MSSQL, and Python flask. The features are:   
+              <li>Present the 5 best-rated news articles.</li>                
+              <li>Present the latest news articles.</li>                     
+              <li>Present a rating feature for news articles.</li>       
+              <li>Present news articles with arbitrary update intervals in the admin panel.</li><li>Present an endpoint to download news articles in JSON</li>
+            <p>Refrence: https://www.free-css.com/free-css-templates/page203/newsfeed</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInDown">
+            <h2>Tag</h2>
+            <ul class="tag_nav">
+              <li><a href="#latest_post">Latest</a></li>
+              <li><a href="#best_rated">Best-Rated</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="footer_widget wow fadeInRightBig">
+            <h2>Contact</h2>
+            <p>Wai-Lok</p>
+            <address>
+            Email: <a style="color: #337ab7;" id="emailMe" href="mailto:cheungwailokde@gmail.com">cheungwailokde@gmail.com</a>
+            <br/>
+            Phone: +(49)0176-6614-7787
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <p class="copyright">Copyright &copy; 2045 <a href="index.html">NewsFeed</a></p>
+      <p class="developer">Developed Wai-Lok referenced to Wpfreeware template</p>
+    </div>
+  </footer>
+</div>
+<script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='assets/js/wow.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='assets/js/slick.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='assets/js/jquery.li-scroller.1.0.js') }}"></script> 
+<script src="{{ url_for('static', filename='assets/js/jquery.newsTicker.min.js') }}"></script> 
+<script src="{{ url_for('static', filename='assets/js/jquery.fancybox.pack.js') }}"></script> 
+<script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/jquery-ui.js') }}"></script>
+{% block script %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+{% extends "newsfeed_template/newsfeed_template.html" %}
+
+
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block style %}
+
+<style>
+.starrating > input {display: none;}  /* Remove radio buttons */
+.starrating > label:before { 
+  content: "\f005"; /* Star */
+  margin: 2px;
+  font-size: 2em;
+  font-family: FontAwesome;
+  display: inline-block; 
+}
+.starrating > label
+{
+  color: #222222; /* Start color when not clicked */
+}
+.starrating > input:checked ~ label
+{ color: #ffca08 ; } /* Set yellow color when star checked */
+.starrating > input:hover ~ label
+{ color: #ffca08 ;  } /* Set yellow color when star hover */    
+</style>
+{% endblock %}
+
+
+{% block slick_slider_left_content %}
+  <div class="single_page">
+
+    <h1>{{title}}</h1>
+    <div class="post_commentbox"> 
+        <a href="#"><i class="fa fa-user"></i>{{creator}}</a> 
+        <span><i class="fa fa-calendar"></i>{{pubDate}}</span>
+        <a href="#"><i class="fa fa-tags"></i>{{category}}</a> </div>
+    <div class="single_page_content"> <img style="margin-bottom:0px;height:auto;width:auto" class="img-center" onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{media_url}}">
+      <blockquote> {{description}}</blockquote>
+     <a href="{{link}}"><i class="fa fa-link"></i> {{link}}</a>
+
+    <div class="container">
+        <form id="rateForm"  method="POST">
+            <div class="starrating">
+                <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 star">5</label>
+                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 star">4</label>
+                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 star">3</label>
+                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 star">2</label>
+                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 star">1</label>
+                <input type="hidden" value="rate">
+            </div>
+        </form>
+        
+      </div>	
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block slick_slider_right_content %}
+        <div class="right_content">
+          <div id = "best_rated" class="single_sidebar">
+            <h2><span>BEST-RATED</span></h2>
+            <ul class="spost_nav">
+                {% for index, row in top_newsfeed.iterrows()%}
+                <li>
+                    <div class="media wow fadeInDown"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                      <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div> 
+{% endblock %}
+
+{% block contentSection_right_content %}
+        <aside class="right_content"> 
+            <div id = "latest_post"  class="latest_post">
+              <h2><span>LATEST</span></h2>
+              <div class="latest_post_container">
+                <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+                <ul class="latest_postnav">
+                    {% for index, row in latest_newsfeed.iterrows() %}
+                    <li>
+                        <div class="media"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                          <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+              </div>
+            </div>         
+        </aside>     
+{% endblock %}
+
+
+{% block script %}
+    <script>
+        $("input[type=radio]").on("change",function(){
+            var rating = $(this).val();
+            var newsid = {{newsid}};
+            $.ajax({
+                url: "{{url_for('rating')}}",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({"newsid": newsid, "rating": rating})
+            }).done(function(data) {
+                console.log('Your voting:', data);
+            });
+        });    
+    </script>
+
+{% endblock %}
+

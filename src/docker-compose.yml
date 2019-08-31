@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+    web:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        ports:
+          # <Port for hosts> : < Port for containers>
+            - '5000:5000'
+        # Give an argument for "ENTRYPOINT" in dockerfile to keep container running
+        entrypoint: ./entrypoint.sh db 1433
+        command: "python3 run.py"
+        # Define extra aliases
+        links:
+            - "db:database"
+        # Define the order to build docker
+        depends_on:
+            - db
+    db:
+        image: mcr.microsoft.com/mssql/server:2019-CTP3.2-ubuntu
+        restart: always
+        environment:        
+          ACCEPT_EULA: 'Y'
+          SA_PASSWORD: 'Admin_password123'
+        ports:
+          # <Port for hosts> : < Port for containers>
+          - '1433:1433'
+        #expose:
+          # Opens port 1433 on the container
+        #  - '1433'
+        volumes:
+          - /var/opt/mssql
+          # Copy scripts from the relatively current directory onto the container 
+          - ./db_src:/usr/src/app 
+        command: sh -c 'chmod +x ./entrypoint.sh; ./entrypoint.sh &  /opt/mssql/bin/sqlservr;'
+        working_dir: /usr/src/app  

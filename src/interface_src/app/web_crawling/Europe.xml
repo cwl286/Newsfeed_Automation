@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0">
+  <channel>
+    <title>NYT &gt; World &gt; Europe</title>
+    <link>https://www.nytimes.com/section/world/europe?emc=rss&amp;partner=rss</link>
+    <atom:link href="https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml" rel="self" type="application/rss+xml"></atom:link>
+    <description></description>
+    <language>en-us</language>
+    <copyright>Copyright 2019 The New York Times Company</copyright>
+    <lastBuildDate>Tue, 27 Aug 2019 12:55:27 +0000</lastBuildDate>
+    <image>
+      <title>NYT &gt; World &gt; Europe</title>
+      <url>https://static01.nyt.com/images/misc/NYT_logo_rss_250x40.png</url>
+      <link>https://www.nytimes.com/section/world/europe?emc=rss&amp;partner=rss</link>
+    </image>
+    <item>
+      <title>Brazil Says It Will Reject $22 Million in Amazon Aid Pledged at G7</title>
+      <link>https://www.nytimes.com/2019/08/27/world/americas/brazil-amazon-aid.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/27/world/americas/brazil-amazon-aid.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/27/world/americas/brazil-amazon-aid.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>President Jair Bolsonaro suggested that President Emmanuel Macron’s real motive behind the offer, made at the Group of 7 summit, was to shield France’s agriculture from Brazilian competition.</description>
+      <dc:creator>Manuela Andreoni</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 12:47:04 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bolsonaro, Jair (1955- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Brazil</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">France</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Wildfires</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Forests and Forestry</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/27/world/27amazon/merlin_159763950_ea3dd159-5fea-45e7-b52b-139bd2953c70-moth.jpg" width="151"></media:content>
+      <media:credit>Victor Moriyama for The New York Times</media:credit>
+      <media:description>Forest burning in Brazil’s Amazon this week.</media:description>
+    </item>
+    <item>
+      <title>Hail and Torrential Rain Turn Spanish Streets Into Rivers</title>
+      <link>https://www.nytimes.com/2019/08/27/world/europe/spain-flooding-hail.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/27/world/europe/spain-flooding-hail.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/27/world/europe/spain-flooding-hail.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The storm on Monday inundated areas on the outskirts of Madrid, transforming some streets into muddied torrents that swept away cars and dumpsters.</description>
+      <dc:creator>Raphael Minder</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 10:07:44 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Weather</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Floods</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Rain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Madrid (Spain)</category>
+    </item>
+    <item>
+      <title>G7, Amazon, Russian Explosion: Your Tuesday Briefing</title>
+      <link>https://www.nytimes.com/2019/08/27/briefing/g7-amazon-russian-explosion.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/27/briefing/g7-amazon-russian-explosion.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/27/briefing/g7-amazon-russian-explosion.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Here’s what you need to know.</description>
+      <dc:creator>Melina Delkic and Alisha Haridasani Gupta</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 06:55:52 +0000</pubDate>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/27/briefing/fac27ambriefing-europe-PROMO-copy/27ambriefing-asia-PROMO-moth.jpg" width="151"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+    </item>
+    <item>
+      <title>Pal Benko, Who Stepped Aside for Bobby Fischer, Dies at 91</title>
+      <link>https://www.nytimes.com/2019/08/26/sports/pal-benko-dead.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/sports/pal-benko-dead.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/sports/pal-benko-dead.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>In 1970 Mr. Benko qualified for the world chess championship cycle but, past his peak as a competitive player, ceded his place to the much younger Mr. Fischer.</description>
+      <dc:creator>Dylan Loeb McClain</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 22:14:14 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Benko, Pal</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Deaths (Obituaries)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Chess</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Fischer, Bobby</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/obituaries/00benko-pix1/00benko-pix1-moth.jpg" width="151"></media:content>
+      <media:credit>Associated Press</media:credit>
+      <media:description>Pal Benko, standing with folded arms, at a 1959 match in Slovenia between Bobby Fischer, right, and Paul Keres. The others in the photo are unidentified. Mr. Benko would eventually cede his place in the world championship cycle to Mr. Fischer, who was 15 years his junior.</media:description>
+    </item>
+    <item>
+      <title>Russia Identifies 4 Radioactive Isotopes From Nuclear Accident</title>
+      <link>https://www.nytimes.com/2019/08/26/world/europe/russia-radiation-accident-isotopes.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/world/europe/russia-radiation-accident-isotopes.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/world/europe/russia-radiation-accident-isotopes.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The Russian authorities identified four isotopes released in a nuclear accident; outside experts say the fallout probably comprised a more complicated mix.</description>
+      <dc:creator>Andrew E. Kramer</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 21:14:45 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Radiation</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Accidents and Safety</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Putin, Vladimir V</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Arkhangelsk (Russia)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Defense and Military Forces</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Nuclear Tests</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Russia</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/26russia-radiation-sub/26russia-radiation-sub-moth.jpg" width="151"></media:content>
+      <media:credit>Maxim Babenko for The New York Times</media:credit>
+      <media:description>Farmland on Kegostrov Island, Russia, near where the nuclear accident took place on the White Sea. Sensors reported elevated levels of radiation in the region.</media:description>
+    </item>
+    <item>
+      <title>At the End of a Chaotic G7 Meeting, Trump Changes His Tone on China and Iran. Again.</title>
+      <link>https://www.nytimes.com/2019/08/26/world/europe/g7-trump-china-trade-war.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/world/europe/g7-trump-china-trade-war.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/world/europe/g7-trump-china-trade-war.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The uncertain prospects for diplomatic initiatives with China and Iran was heightened by the president’s unpredictability throughout the weekend.</description>
+      <dc:creator>Michael D. Shear and Peter Baker</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 03:18:36 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Trade and World Market</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Biarritz (France)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/26prexy-1/26prexy-1-moth.jpg" width="151"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+      <media:description>President Trump at a news conference held at the conclusion of the Group of 7 summit meetings in Biarritz, France.</media:description>
+    </item>
+    <item>
+      <title>Dispute Over Amazon Gets Personal for Bolsonaro and Macron</title>
+      <link>https://www.nytimes.com/2019/08/26/world/europe/bolsonaro-macron-g7.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/world/europe/bolsonaro-macron-g7.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/world/europe/bolsonaro-macron-g7.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The war of words reached a new pitch after the Brazilian leader made a sarcastic comment on a social media post mocking the French first lady.</description>
+      <dc:creator>Aurelien Breeden and Megan Specia</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 00:12:26 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Bolsonaro, Jair (1955- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Brazil</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Biarritz (France)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/26bolsonaro/26G7-livebriefing6-moth.jpg" width="151"></media:content>
+      <media:credit>Pool photo by Ludovic Marin</media:credit>
+      <media:description>President Emmanuel Macron of France said on Monday that President Jair Bolsonaro of Brazil had made “extremely rude” comments about his wife, Brigitte Macron.</media:description>
+    </item>
+    <item>
+      <title>Trump Has Just the Place for the Next G7 Meeting: His Own Golf Resort</title>
+      <link>https://www.nytimes.com/2019/08/26/world/europe/trump-doral-g7.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/world/europe/trump-doral-g7.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/world/europe/trump-doral-g7.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Critics say holding the 2020 gathering at his Doral golf resort would be a blatant and unconstitutional attempt to use the presidency for personal gain.</description>
+      <dc:creator>Patricia Mazzei, Michael D. Shear and Eric Lipton</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 00:43:30 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Trump National Doral Miami (Doral, Fla)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Conflicts of Interest</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Presidents and Presidency (US)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/26trump-doral1/merlin_159742230_8946ffed-4f27-4704-b292-a788f7659d1a-moth.jpg" width="151"></media:content>
+      <media:credit>Ilana Panich-Linsman for The New York Times</media:credit>
+      <media:description>The Trump National Doral resort.</media:description>
+    </item>
+    <item>
+      <title>Lara Spencer Apologizes, and There’s Ballet Dancing in the Streets</title>
+      <link>https://www.nytimes.com/2019/08/26/arts/dance/lara-spencer-apology-gma.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/arts/dance/lara-spencer-apology-gma.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/arts/dance/lara-spencer-apology-gma.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>One way to demonstrate the power of dance? A ballet class. “We are such a loving, accepting community,” Robbie Fairchild said.</description>
+      <dc:creator>Gia Kourlas</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 03:20:47 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Dancing</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Good Morning America (TV Program)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Apologies</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Television</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">ABC Inc</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Spencer, Lara</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">George, prince of Cambridge</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Robbie Fairchild</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Fabrice Calmels</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Travis Wall</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">Dancing With the Stars (TV Program)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_ttl">So You Think You Can Dance (TV Program)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Education (K-12)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/27/arts/26spencer-ballet1/26spencer-ballet1-moth-v2.jpg" width="151"></media:content>
+      <media:credit>Misha Friedman for The New York Times</media:credit>
+      <media:description>Travis Wall, left, and Robbie Fairchild led a class for dancers &amp;mdash; boys and girls, men and women &amp;mdash; near the studios of &amp;ldquo;Good Morning America&amp;rdquo; in Times Square.</media:description>
+    </item>
+    <item>
+      <title>Deformed Skulls Mark a Historic Migration Into Europe</title>
+      <link>https://www.nytimes.com/2019/08/26/science/deformed-skulls-croatia.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/science/deformed-skulls-croatia.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/science/deformed-skulls-croatia.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Human remains found in Croatia with signs of artificial cranial deformation provide the earliest genetic evidence of the presence of people from East Asia in Europe.</description>
+      <dc:creator>JoAnna Klein</dc:creator>
+      <pubDate>Tue, 27 Aug 2019 03:37:05 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Archaeology and Anthropology</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Skull (Body Part)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Bones</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">PLoS One (Journal)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Croatia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">East Asia</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">your-feed-science</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/science/26TB-CRANIALDEFORMATION1/26TB-CRANIALDEFORMATION1-moth.jpg" width="151"></media:content>
+      <media:credit>M. Novak/Institute for Anthropological Research, Zagreb</media:credit>
+      <media:description>A piece of an elongated skull found at an archaeological site in eastern Croatia. Scientists believe that two misshapen skulls discovered at the site date to the fifth or sixth century A.D.</media:description>
+    </item>
+    <item>
+      <title>G7 Highlights on Final Day of Meetings: Iran, Climate Change and China Trade</title>
+      <link>https://www.nytimes.com/2019/08/26/world/europe/g7-live-updates.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/world/europe/g7-live-updates.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/world/europe/g7-live-updates.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>President Trump spoke again about the trade war, President Emmanuel Macron of France discussed diplomacy with Iran, and world leaders agreed on Amazon aid.</description>
+      <pubDate>Mon, 26 Aug 2019 23:07:29 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">European Union</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">France</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/26G7-livebriefing8/26G7-livebriefing8-moth.jpg" width="151"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+      <media:description>President Trump and President Macron of France during their final press conference of the Group of 7 summit in Biarritz, France, on Monday.</media:description>
+    </item>
+    <item>
+      <title>G7, Amazon Fires, Million-Dollar Drugs: Your Monday Briefing</title>
+      <link>https://www.nytimes.com/2019/08/26/briefing/g7-amazon-fires-million-dollar-drugs.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/26/briefing/g7-amazon-fires-million-dollar-drugs.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/26/briefing/g7-amazon-fires-million-dollar-drugs.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Here’s what you need to know.</description>
+      <dc:creator>Melina Delkic</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 10:09:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Rule 1 at the G7 Meeting? Don’t Get You-Know-Who Mad</title>
+      <link>https://www.nytimes.com/2019/08/25/world/europe/trump-g7-allies.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/25/world/europe/trump-g7-allies.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/25/world/europe/trump-g7-allies.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Determined not to rouse President Trump’s well-known temper, Group of 7 leaders registered their policy differences in the most flattering of tones.</description>
+      <dc:creator>Peter Baker</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 12:37:24 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Trade and World Market</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Johnson, Boris</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Great Britain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">France</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/25/world/25assess1/merlin_159718971_e1347359-8795-4635-a5f0-94c628c3f0a7-moth.jpg" width="151"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+      <media:description>Group of 7 leaders posing for a photo before a dinner Sunday at the summit in Biarritz, France.</media:description>
+    </item>
+    <item>
+      <title>Trump Offers Contradictory Signals on China Trade War</title>
+      <link>https://www.nytimes.com/2019/08/25/world/europe/trump-offers-contradictory-signals-on-china-trade-war.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/25/world/europe/trump-offers-contradictory-signals-on-china-trade-war.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/25/world/europe/trump-offers-contradictory-signals-on-china-trade-war.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>After initially said that he was having “second thoughts” about a new levies on Chinese goods, Mr. Trump said he only regretted not raising tariffs faster.</description>
+      <dc:creator>Michael D. Shear</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 12:36:52 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Economic Conditions and Trends</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Trade and World Market</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">China</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Customs (Tariff)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Japan</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">France</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/25/world/25prexy-promo/merlin_159718905_ceef87c8-f8e7-4efe-bd47-3edd36137423-moth.jpg" width="151"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+      <media:description>President Trump and other world leaders at the G7 summit in Biarritz, France, on Sunday.</media:description>
+    </item>
+    <item>
+      <title>Plane and Helicopter Collide in Spain, Killing 7</title>
+      <link>https://www.nytimes.com/2019/08/25/world/europe/spain-plane-helicopter-crash.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/25/world/europe/spain-plane-helicopter-crash.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/25/world/europe/spain-plane-helicopter-crash.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The crash took place over the island of Majorca as the two aircraft, which had taken off from separate airports, collided below a thousand feet.</description>
+      <dc:creator>Raphael Minder</dc:creator>
+      <pubDate>Sun, 25 Aug 2019 18:43:17 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Aviation Accidents, Safety and Disasters</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Majorca (Spain)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Helicopters</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Airlines and Airplanes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Spain</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/26spain/merlin_159698163_9215fc07-fedb-4bc1-aaeb-c91a4a9a8056-moth.jpg" width="151"></media:content>
+      <media:credit>Incendios f.Baleares, via Associated Press</media:credit>
+      <media:description>Debris from the collision in Majorca.</media:description>
+    </item>
+    <item>
+      <title>Iranian Official Makes Surprise Appearance on Sidelines of G7 Summit</title>
+      <link>https://www.nytimes.com/2019/08/25/world/europe/g7-iran-trump-biarritz.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/25/world/europe/g7-iran-trump-biarritz.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/25/world/europe/g7-iran-trump-biarritz.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>At the invitation of France, Iran’s foreign minister flew to Biarritz and met with European officials. But he had no plans to sit down with American officials.</description>
+      <dc:creator>Peter Baker and Aurelien Breeden</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 12:36:15 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Embargoes and Sanctions</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Nuclear Weapons</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Zarif, Mohammad Javad</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Biarritz (France)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/25/world/25G7-iran-1/merlin_159699912_13079c6d-a173-4b31-9a46-efefd28f9360-moth.jpg" width="151"></media:content>
+      <media:credit>Georges Gobet/Agence France-Presse — Getty Images</media:credit>
+      <media:description>The airplane that carried Iran’s Foreign Minister Mohammad Javad Zarif in Biarritz, France.</media:description>
+    </item>
+    <item>
+      <title>Fury as British Airways Cancels Scores of Flights, Some by Mistake</title>
+      <link>https://www.nytimes.com/2019/08/25/world/europe/british-airways-cancel-flights.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/25/world/europe/british-airways-cancel-flights.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/25/world/europe/british-airways-cancel-flights.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Customers vented their fury after the airline said their flights would be canceled because of a looming strike, then backtracked.</description>
+      <dc:creator>Iliana Magra</dc:creator>
+      <pubDate>Sun, 25 Aug 2019 17:59:12 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Airlines and Airplanes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Pilots</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Customer Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Strikes</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">British Airline Pilots Assn</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">British Airways PLC</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">London (England)</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/26british-airways/merlin_138329688_5211a0dd-c959-43bd-820a-2a1817b184fb-moth.jpg" width="151"></media:content>
+      <media:credit>Hannah Mckay/Reuters</media:credit>
+      <media:description>&amp;ldquo;We are sorry that some customers received an email in error to say that their flight had been canceled on non-strike days,&amp;rdquo; British Airways said in an email on Sunday.</media:description>
+    </item>
+    <item>
+      <title>Johnson Walks Tightrope at G7, as Trump Pledges ‘Very Big Trade Deal’ for U.K.</title>
+      <link>https://www.nytimes.com/2019/08/25/world/europe/trump-johnson-trade-deal.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/25/world/europe/trump-johnson-trade-deal.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/25/world/europe/trump-johnson-trade-deal.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>Prime Minister Boris Johnson responded cautiously, saying that reaching a trade agreement “may take some time” and would require compromises from Washington.</description>
+      <dc:creator>Stephen Castle</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 12:35:44 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Johnson, Boris</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Trade and World Market</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Great Britain Withdrawal from EU (Brexit)</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">European Union</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Great Britain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Relations</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/25/world/25britain1/25britain1-moth.jpg" width="151"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+      <media:description>President Trump and Prime Minister Boris Johnson of Britain met for a working breakfast at the Group of 7 summit in Biarritz, France, on Sunday.</media:description>
+    </item>
+    <item>
+      <title>Prince Andrew Denies Knowing of Sex Trafficking by Epstein</title>
+      <link>https://www.nytimes.com/2019/08/24/world/europe/prince-andrew-jeffrey-epstein.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/24/world/europe/prince-andrew-jeffrey-epstein.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/24/world/europe/prince-andrew-jeffrey-epstein.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The prince’s statement was his most comprehensive response to the scandal.</description>
+      <dc:creator>David D. Kirkpatrick</dc:creator>
+      <pubDate>Mon, 26 Aug 2019 09:44:10 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Royal Families</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Child Abuse and Neglect</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">Diplomatic Service, Embassies and Consulates</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Andrew, Duke of York</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Elizabeth II, Queen of Great Britain</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Epstein, Jeffrey E (1953- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">Great Britain</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/26/world/24andrew-2/24andrew-2-moth.jpg" width="151"></media:content>
+      <media:credit>Mark Cuthbert/UK Press, via Getty Images</media:credit>
+      <media:description>Prince Andrew in June. &amp;ldquo;I deplore the exploitation of any human being and would not condone, participate in, or encourage any such behavior,&amp;rdquo; he said Saturday.</media:description>
+    </item>
+    <item>
+      <title>Trump Aides Slam French for Focusing on ‘Niche Issues’ at G7</title>
+      <link>https://www.nytimes.com/2019/08/24/us/politics/trump-g7-economy.html?emc=rss&amp;partner=rss</link>
+      <guid isPermaLink="true">https://www.nytimes.com/2019/08/24/us/politics/trump-g7-economy.html</guid>
+      <atom:link href="https://www.nytimes.com/2019/08/24/us/politics/trump-g7-economy.html?emc=rss&amp;partner=rss" rel="standout"></atom:link>
+      <description>The orchestrated message underscored the deep rift between President Trump and his counterparts. But Mr. Trump, who tweeted about New York subways, was also focused elsewhere.</description>
+      <dc:creator>Michael D. Shear</dc:creator>
+      <pubDate>Sun, 25 Aug 2019 08:45:21 +0000</pubDate>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_org">Group of Seven</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Trump, Donald J</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_per">Macron, Emmanuel (1977- )</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/nyt_geo">France</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">International Relations</category>
+      <category domain="http://www.nytimes.com/namespaces/keywords/des">United States Politics and Government</category>
+      <media:content height="151" medium="image" url="https://static01.nyt.com/images/2019/08/25/world/25summit/24summit-moth.jpg" width="151"></media:content>
+      <media:credit>Erin Schaff/The New York Times</media:credit>
+      <media:description>President Trump and the French president, Emmanuel Macron, on Saturday at the H&amp;ocirc;tel du Palais in Biarritz, France.</media:description>
+    </item>
+  </channel>
+</rss>

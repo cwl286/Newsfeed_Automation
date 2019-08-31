@@ -1,0 +1,57 @@
+
+{% extends "newsfeed_template/newsfeed_template.html" %}
+
+{% block title %}
+json
+{% endblock %}
+
+{% block slick_slider_left_content %}
+
+<div class="spost_nav">
+      <ul>
+      <li><a href="{{url_for('get_tasks',task='best_rated')}}" class="catg_title"  target="_blank"> Best-rated JSON</a></li>
+      <li><a href="{{url_for('get_tasks',task='latest')}}" class="catg_title" target="_blank"> Latest JSON</a></li>
+      <li><a href="{{url_for('get_tasks',task='all')}}" class="catg_title" target="_blank"> All JSON</a></li>
+      </ul>
+</div>
+
+{% endblock %}
+
+{% block slick_slider_right_content %}
+        <div class="right_content">
+          <div id = "best_rated" class="single_sidebar">
+            <h2><span>BEST-RATED</span></h2>
+            <ul class="spost_nav">
+                {% for index, row in top_newsfeed.iterrows()%}
+                <li>
+                    <div class="media wow fadeInDown"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                      <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div> 
+{% endblock %}
+
+
+{% block contentSection_right_content %}
+        <aside class="right_content"> 
+            <div id = "latest_post"  class="latest_post">
+              <h2><span>LATEST</span></h2>
+              <div class="latest_post_container">
+                <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+                <ul class="latest_postnav">
+                    {% for index, row in latest_newsfeed.iterrows() %}
+                    <li>
+                        <div class="media"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                          <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+              </div>
+            </div>         
+        </aside>     
+{% endblock %}

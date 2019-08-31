@@ -1,0 +1,224 @@
+{% extends "newsfeed_template/newsfeed_template.html" %}
+
+
+{% block title %}
+admin
+{% endblock %}
+
+
+{% block contentSection_left_content%}{%if not usr %}
+    <div class="contact_area">
+        <h2>LOGIN</h2>      
+        <form action="{{url_for('login')}}" method="POST">
+            <div class="form-group row">
+                <label for="admin" class="col-md-4 col-form-label text-md-right">Admin Account</label>
+                <div class="col-md-6">
+                    <input type="text" id="email_address" class="form-control" name="username" required autofocus>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                <div class="col-md-6">
+                    <input type="password" id="password" autocomplete="on" class="form-control" name="password" required>
+                </div>
+            </div>
+
+            <!--div class="form-group row">
+                <div class="col-md-6 offset-md-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="remember"> Remember Me
+                        </label>
+                    </div>
+                </div>
+            </div-->
+
+            <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                    Login
+                </button>
+                <!--a href="#" class="btn btn-link">
+                    Forgot Your Password?
+                </a-->
+                {% if login_err %}
+                <h1> {{login_err}}</h1>
+                {% endif %}   
+            </div>
+          </form>
+    </div>
+    {% else %}  
+    <div class="contact_area"> 
+        <h2>ADMIN PAGE</h2> 
+        <h3>Show news articles with arbitrary update intervals and in JSON</h3> 
+        <form class="multi-range-field my-5 pb-5">     
+            <div class="form-group row">   
+                <div class="col-sm-8">
+                </div>
+            </div> 
+            <div class="form-group row">   
+                <input type="text" id="date" readonly class="col-md-6 col-form-label text-md-right" style="border:0; color:#f6931f; font-weight:bold;">
+            </div>   
+            <div class="form-group row">   
+                <div class="col-sm-8">
+                    <div id="slider-range"></div>
+                </div>
+            </div> 
+
+            <div class="download_link">
+                  <ul>
+                    <li><a href="{{url_for('get_tasks',task='all')}}" target="_blank" class="catg_title" > Download JSON</a></li>
+                  </ul>
+            </div>
+        </form>    
+          <br/>
+
+        <form action="{{url_for('sign_out')}}" method="POST">
+            <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                    Sign Out
+                </button>
+            </div>
+        </form>
+    </div>
+    {% endif %}   
+    {%if usr %}
+    <h2><span>News Feed</span></h2>   
+
+    <div class="single_post_content_left">
+      <ul class="spost_nav">
+        {% for index, row in newsfeed.sort_values(by=['newsid']).head((newsfeed.shape[0]/2)|int).iterrows()%}
+        <li id="newsid{{row['newsid']}}">
+          <div class="media wow fadeInDown"> <a href="{{url_for('news', newsid=row['newsid'])}}" class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+            <div class="media-body"> <a href="{{url_for('news', newsid=row['newsid'])}}" class="catg_title"> {{row['title']}}</a> </div>
+          </div>
+          </li>          
+        {% endfor %}  
+      </ul>
+    </div>
+    <div class="single_post_content_right">
+      <ul class="spost_nav">          
+        {% for index, row in newsfeed.sort_values(by=['newsid']).tail((newsfeed.shape[0]/2)|int).iterrows()%}
+        <li id="newsid{{row['newsid']}}">
+          <div class="media wow fadeInDown"> <a href="{{url_for('news', newsid=row['newsid'])}}" class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+            <div class="media-body"> <a href="{{url_for('news', newsid=row['newsid'])}}" class="catg_title"> {{row['title']}}</a> </div>
+          </div>
+          </li>          
+        {% endfor %}           
+      </ul>
+    </div>
+
+    {% endif %}  
+{% endblock %}
+
+
+{% block contentSection_right_content %}
+        <div class="right_content">
+          <div id = "best_rated" class="single_sidebar">
+            <h2><span>BEST-RATED</span></h2>
+            <ul class="spost_nav">
+                {% for index, row in top_newsfeed.iterrows()%}
+                <li>
+                    <div class="media wow fadeInDown"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                      <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div> 
+        <aside class="right_content"> 
+            <div id = "latest_post"  class="latest_post">
+              <h2><span>LATEST</span></h2>
+              <div class="latest_post_container">
+                <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+                <ul class="latest_postnav">
+                    {% for index, row in latest_newsfeed.iterrows() %}
+                    <li>
+                        <div class="media"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                          <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+              </div>
+            </div>         
+        </aside>     
+{% endblock %}
+
+
+
+{% block script %}
+<script>
+$(function(){
+    var min_date = "{{newsfeed.head(1)['pubDate'].values[0]}}";
+    var max_date = "{{newsfeed.tail(1)['pubDate'].values[0]}}";
+    if (min_date && max_date) {
+        min_date = new Date(min_date);
+        max_date = new Date(max_date);
+    } 
+    //Convert date difference in milliseconds format
+    var max = min_date.valueOf() - max_date.valueOf();
+    //Update the slider to date format
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: max,
+        values: [ 0, max ],
+        slide: function( event, ui ) {
+          //Convert date format back 
+          var d1 = new Date(max_date.valueOf()+ui.values[0]);
+          var d2 = new Date(max_date.valueOf()+ui.values[1]);
+        $( "#date" ).val(d1.getFullYear() + "-" + (d1.getMonth() + 1) + "-" + d1.getDate()
+                         + " " + d1.getHours() + ":" + d1.getMinutes() + ":" + d1.getSeconds()
+                         + " - "
+                         + d2.getFullYear() + "-" + (d2.getMonth() + 1) + "-" + d2.getDate()
+                         + " " + d2.getHours() + ":" + d2.getMinutes() + ":" + d2.getSeconds()
+                        );
+        },
+        change: function( event, ui){
+            //Convert date format back 
+            var d1 = new Date(max_date.valueOf()+ui.values[0]);
+            d1 = d1.toJSON();
+            var d2 = new Date(max_date.valueOf()+ui.values[1]);
+            d2 = d2.toJSON();
+            
+            var url = "{{url_for('get_tasks',task='interval')}}?start=" + d1 + "&end=" + d2;     
+            $(".download_link a").attr("href",url);
+            
+            //Refresh the newsfeed
+            $.ajax({
+                url: "{{url_for('limit_interval')}}",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({"start": d1, "end": d2})
+            }).done(function(data) {
+                console.log('newsid to show:', data); 
+                
+                $(".single_post_content_left .spost_nav li").hide();                
+                $(".single_post_content_right .spost_nav li").hide();
+                for (var i = 0; i < data["newsid_lst"].length; i++) { 
+                    console.log(data["newsid_lst"][i]);
+                    $("#newsid" + data["newsid_lst"][i]).show(); 
+                }
+                
+            });
+            
+        }
+    });
+    
+    //Update the label
+    var d1 = new Date(max_date.valueOf() + $("#slider-range").slider("values", 0));
+    var d2 = new Date(max_date.valueOf() + $("#slider-range").slider("values", 1));
+    $( "#date" ).val(
+        d1.getFullYear() + "-" + (d1.getMonth() + 1) + "-" + d1.getDate()
+         + " " + d1.getHours() + ":" + d1.getMinutes() + ":" + d1.getSeconds()
+         + " - "
+         + d2.getFullYear() + "-" + (d2.getMonth() + 1) + "-" + d2.getDate()
+         + " " + d2.getHours() + ":" + d2.getMinutes() + ":" + d2.getSeconds()
+        );
+    });    
+</script>
+
+{% endblock %}
