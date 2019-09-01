@@ -1,8 +1,3 @@
-# dblib3.py
-#Created by Jorge Besada, July 2014
-#Same program as the Python Database Interface for MS SQL Server (for Python 2.x)
-#converted to Python 3
-
 import pandas as pd
 import pyodbc
 
