@@ -7,7 +7,7 @@ xml1 = "Technology.xml"
 xml2 = "Europe.xml"
 
 def loadXML(url):     
-    # creating tree element from given url 
+    # creating tree element from given url / path
     try:            
         tree = etree.parse(url)
         return tree
@@ -16,7 +16,7 @@ def loadXML(url):
         print( str(e))
 
 def xpath(tree, path):
-        # creating tree element from given url 
+        # user xpath to look for nodes from tree
         try:            
             nodes = tree.xpath(path)
             return nodes
