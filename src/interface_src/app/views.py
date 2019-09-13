@@ -10,6 +10,7 @@ current_date = last_update_time.strftime("%A, %d %B %Y")
 newsfeed = controller.getData("News")
 latest_newsfeed = pd.DataFrame()
 top_newsfeed = pd.DataFrame()      
+
 if not newsfeed.empty:
     newsfeed = newsfeed.sort_values(by=['pubDate'], ascending=False)
     top_newsfeed = newsfeed.head(top_news)

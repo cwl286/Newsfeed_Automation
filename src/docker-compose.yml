@@ -4,6 +4,7 @@ services:
         build: 
             context: .
             dockerfile: Dockerfile
+        restart: always
         ports:
           # <Port for hosts> : < Port for containers>
             - '5000:5000'

@@ -1,38 +1,23 @@
 from flask import Flask
-import os,  secrets
-from .web_crawling.database import * #run from run.py add dot
-from .web_crawling.crawler import * #run from run.py add dot
-from .web_crawling.controller import * #run from run.py add dot
+#If start from run.py, then add dot
+from .web_crawling.database import * 
+from .web_crawling.crawler import *
+from .web_crawling.controller import * 
+from .config import Config, DevelopmentConfig, TestingConfig, ProductionConfig
 
+#Create Flask object
 app = Flask(__name__)
-app.config["SECRET_KEY"] = secrets.token_urlsafe(16)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
+#Import the config class
+app.config.from_object("app.config:DevelopmentConfig") 
+top_news = app.config["TOP_NEWS"]
+update_time_interval = app.config["UPDATE_TIME_INTERVAL"]
+controller = Controller(app.config["DRIVER"], app.config["SERVER"],\
+                        app.config["DB_NAME"], app.config["USER"], app.config["PWD"])
 
-#Initial all the newsfeed from the source
-current_dir = os.path.dirname(os.path.realpath(__file__))
-xml1 = current_dir + "/web_crawling/Technology.xml"
-xml2 = current_dir + "/web_crawling/Europe.xml"
-driver = '{ODBC Driver 17 for SQL Server}'
-#CONTAINER_NAME, CONTAINER_PORT
-server = 'db,1433'
-db = 'TestDB'
-user = 'sa'
-pwd = 'Admin_password123'
-'''
-#Connection string for sql server
-conn_str = 'DRIVER={ODBC Driver 17 for SQL Server};\
-    SERVER=127.0.0.1,1433;\
-    DATABASE=TestDB;\
-    UID=sa;\
-    PWD=Admin_password123'
-'''
-top_news = 5
-update_time_interval = 3000
-controller = Controller(driver, server, db, user, pwd)
 
 #Initialize database data from Nytimes XML
-isCrawl1 = controller.crawlXML(xml1)
-isCrawl2 = controller.crawlXML(xml2)
+isCrawl1 = controller.crawlXML(app.config["XML1"])
+isCrawl2 = controller.crawlXML(app.config["XML2"])
 print("News1 is saved = ", isCrawl1)
 print("News2 is saved = ", isCrawl2)
 
