@@ -58,7 +58,7 @@
 	            </form>
             {% else %}
             	<form action="{{url_for('sign_out')}}" method="POST" class="login_box">
-	                <label>{{usr}}</label>
+	                <label>{{session['USERNAME'] }}</label>
 	                <button type="submit" class="btn-primary">
 	                    Sign Out
 	                </button>
