@@ -17,7 +17,7 @@ class Database:
         self.pwd = pwd
             
     def getConnection(self):
-        drivers = [item for item in pyodbc.drivers()]    
+        #drivers = [item for item in pyodbc.drivers()]    
         try:
             conn_str = f'DRIVER={self.driver};SERVER={self.server};DATABASE={self.db};UID={self.user};PWD={self.pwd}'
             self.cnxn = pyodbc.connect(conn_str)
@@ -44,6 +44,7 @@ class Database:
             
     def bulkInsert(self, table_name, df):    
         #args: string, dataframe
+        cursor = None
         try:
             headers = list(df)            
             query = f"INSERT INTO dbo.{table_name} ({','.join(headers)})" +\
@@ -52,15 +53,15 @@ class Database:
             for index,row in df.iterrows():
                 args = tuple(row)
                 cursor.execute(query, args)
-            cursor.commit()
-            cursor.close()
         except Exception as e:
             print("Could not insert to database")
             print(e)
-        else:
+        finally:
+            cursor.commit()
+            cursor.close()
             print(table_name + ' is saved.')
             
-    def InsertUpdate(self, table_name, data, conditions):
+    def InsertOrUpdate(self, table_name, data, conditions):
         #args: string, dict, dict
         '''        
         update Ratings set rating='2' where ip_addr =  '0.0.0.1'
@@ -69,6 +70,7 @@ class Database:
         '''
         query = ""
         args = []
+        cursor = None
         try:     
             if conditions:                
                 conditions_keys = list(conditions.keys())
@@ -82,11 +84,12 @@ class Database:
             args = args + list(data.values())
             cursor = self.cnxn.cursor()
             cursor.execute(query, args)
-            cursor.commit()
-            cursor.close()
         except Exception as e:
             print("Could not insert to database")
             print(e)
+        finally:
+            cursor.commit()
+            cursor.close()
         return
 
     def close(self):        

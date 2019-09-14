@@ -13,7 +13,7 @@ class ProductionConfig(Config):
 
 class DevelopmentConfig(Config):
     HOST = '0.0.0.0'
-    DEBUG = True
+    DEBUG = False
     SECRET_KEY = secrets.token_urlsafe(16)
     '''
     - Connection string for MSSQL server
@@ -27,8 +27,8 @@ class DevelopmentConfig(Config):
         in the docker-compose.yml instead
     '''
     DRIVER = '{ODBC Driver 17 for SQL Server}'
-    SERVER = 'db,1433' 
-    #SERVER = '127.0.0.1,1433'
+    #SERVER = 'db,1433' 
+    SERVER = '127.0.0.1,1433'
     DB_NAME = 'TestDB'
     USER = 'sa'
     PWD = 'Admin_password123'
@@ -43,13 +43,6 @@ class DevelopmentConfig(Config):
     # Millisecond to wait and refresh the web interface
     UPDATE_TIME_INTERVAL = 3000
 
-class TestingConfig(Config):
-    TESTING = True
-    DEBUG = True
-    SECRET_KEY = secrets.token_urlsafe(16)
-    TEMPLATES_AUTO_RELOAD = True
+class DockerConfig(DevelopmentConfig):
+    SERVER = 'db,1433' 
     
-    
-'''
-
-'''

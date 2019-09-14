@@ -1,57 +1,31 @@
-from app import * #import app object and all default variables
+from app import app, controller #import app object and all default variables
 from flask import Flask, flash, redirect, render_template, request, url_for, abort, jsonify, session, make_response
 from datetime import datetime
-from .web_crawling.controller import * #run from run.py add dot
-import pandas as pd
-
-last_update_time = datetime.datetime.now()
-current_date = last_update_time.strftime("%A, %d %B %Y")
-
-newsfeed = controller.getData("News")
-latest_newsfeed = pd.DataFrame()
-top_newsfeed = pd.DataFrame()      
-
-if not newsfeed.empty:
-    newsfeed = newsfeed.sort_values(by=['pubDate'], ascending=False)
-    top_newsfeed = newsfeed.head(top_news)
-    latest_newsfeed = newsfeed.head(top_news)
-    
-def verifyRefreshInterface():    
-    global last_update_time
-    global top_newsfeed
-    global latest_newsfeed
-    diff = datetime.datetime.now() - last_update_time
-    if  (diff.total_seconds() > update_time_interval):
-        newsfeed = controller.getData("News")
-        if not newsfeed.empty:
-            newsfeed = newsfeed.sort_values(by=['pubDate'], ascending=False)
-            top_newsfeed = newsfeed.head(top_news)
-            latest_newsfeed = newsfeed.head(top_news)
-        print('update Newsfeed')
+        
 @app.route("/")
 def index():
-    verifyRefreshInterface()    
-    return render_template("/index.html", current_date=current_date,\
-                           top_newsfeed = top_newsfeed, latest_newsfeed=latest_newsfeed,\
-                           newsfeed=newsfeed)
-@app.route("/admin", methods=["GET"])
+    controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])    
+    return render_template("/index.html",\
+                           current_date = controller.current_date,\
+                           top_newsfeed = controller.top_newsfeed,\
+                           latest_newsfeed = controller.latest_newsfeed,\
+                           newsfeed = controller.newsfeed)
+    
+@app.route("/admin")
 def admin():
-    verifyRefreshInterface()
+    controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])
     login_err = ""
     usr = ''
     if  session.get('USERNAME'):
         usr = session["USERNAME"]
-    if request.method == 'GET':
-        if "login_err" in request.args:
-            newsid = request.args.get('newsid')
-            login_err ="The username does not exist or the password is incorrect."
-    response = make_response(render_template("/admin.html", current_date=current_date,\
-                           newsfeed=newsfeed,\
-                           top_newsfeed = top_newsfeed,\
-                           latest_newsfeed=latest_newsfeed,\
-                           login_err = login_err, usr = usr)), 200
+        
+    response = make_response(render_template("/admin.html", \
+                                             current_date = controller.current_date,\
+                                            newsfeed = controller.newsfeed,\
+                                            top_newsfeed = controller.top_newsfeed,\
+                                            latest_newsfeed = controller.latest_newsfeed,\
+                                            usr = usr)), 200
     return response
-
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -65,29 +39,17 @@ def login():
         if len(users_df[(users_df["password"] == pwd) & ( users_df["username"] == usr)].index) > 0:
             #keep the session about login
             session["USERNAME"] = usr            
-            response = make_response(render_template("/admin.html", current_date=current_date,\
-                                   newsfeed=newsfeed,\
-                                   top_newsfeed = top_newsfeed,\
-                                   latest_newsfeed=latest_newsfeed,\
-                                   login_err = None, usr = usr)), 200
-            if "remember" in request.form:
-                response.set_cookie(
-                                key, 
-                                value='', 
-                                max_age=None, 
-                                expires=None, 
-                                path='/', 
-                                domain=None, 
-                                secure=False, 
-                                httponly=False, 
-                                samesite=None
-                            )
-
-            #print("remember" in request.form)
+            response = make_response(render_template("/admin.html", \
+                                                     current_date = controller.current_date,\
+                                                    newsfeed = controller.newsfeed,\
+                                                    top_newsfeed = controller.top_newsfeed,\
+latest_newsfeed=controller.latest_newsfeed, usr = usr)), 200
             return response
         else:
             session.pop("USERNAME", None)
-            return redirect(url_for('admin', login_err="yes"))
+            login_err ="The username does not exist or the password is incorrect."
+            flash(login_err, "danger")
+            return redirect(url_for('admin'))
     else:
         session.pop("USERNAME", None)
         return redirect(url_for('admin'))
@@ -100,14 +62,16 @@ def sign_out():
 
 @app.route("/json_page")
 def json_page():
-    verifyRefreshInterface()
-    return render_template("/json.html", current_date=current_date,\
-                           top_newsfeed = top_newsfeed, latest_newsfeed=latest_newsfeed)
+    controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])
+    return render_template("/json.html", \
+                           current_date = controller.current_date,\
+                           top_newsfeed = controller.top_newsfeed,\
+                           latest_newsfeed=controller.latest_newsfeed)
 
 
-@app.route('/news', methods=['GET', 'POST'])
+@app.route('/news', methods=['GET'])
 def news():
-    verifyRefreshInterface()
+    controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])
     newsfeed = controller.getData("News")
     error = None
     if request.method == 'GET':
@@ -124,11 +88,16 @@ def news():
                 media_url = str(targetnews["media_url"].values[0])
                 link = str(targetnews["link"].values[0])
                 
-                return render_template("/news.html", current_date=current_date,\
-                           top_newsfeed = top_newsfeed, latest_newsfeed=latest_newsfeed,\
-                           title=title,creator=creator, category=category,description=description,\
-                                    pubDate=pubDate, media_url=media_url, link=link, newsid=newsid)
-    return redirect(url_for('404', current_date=current_date,\
+                return render_template("/news.html", \
+                                                    current_date = controller.current_date,\
+                                                    top_newsfeed = controller.top_newsfeed,\
+                                                    latest_newsfeed=controller.latest_newsfeed,\
+                                                    title = title,creator = creator, \
+                                                    category = category,\
+                                                    description = description,\
+                                                    pubDate = pubDate, media_url = media_url, \
+                                                    link = link, newsid = newsid)
+    return redirect(url_for('404', current_date = controller.current_date,\
                            top_news=top_news, newsfeed=newsfeed))
 
 
@@ -138,15 +107,16 @@ def get_tasks(task):
     if not task:
         abort(404)
     elif task in "latest": 
-        return make_response(jsonify(latest_newsfeed.to_dict(orient="index"))), 201
+        return make_response(jsonify(controller.latest_newsfeed.to_dict(orient="index"))), 201
     elif task in "best_rated": 
-        return make_response(jsonify(top_newsfeed.to_dict(orient="index"))), 201
+        return make_response(jsonify(controller.top_newsfeed.to_dict(orient="index"))), 201
     elif task in "all": 
-        return make_response(jsonify(newsfeed.to_dict(orient="index"))), 201
+        return make_response(jsonify(controller.newsfeed.to_dict(orient="index"))), 201
     elif task in "interval" and request.method == 'GET' and session.get('USERNAME'):
-        start = datetime.datetime.strptime(request.args.get('start'), '%Y-%m-%dT%H:%M:%S.%fZ')
-        end = datetime.datetime.strptime(request.args.get('end'), '%Y-%m-%dT%H:%M:%S.%fZ')
-        respone = newsfeed[(newsfeed['pubDate'] > start) & (newsfeed['pubDate'] <= end)]
+        start = datetime.strptime(request.args.get('start'), '%Y-%m-%dT%H:%M:%S.%fZ')
+        end = datetime.strptime(request.args.get('end'), '%Y-%m-%dT%H:%M:%S.%fZ')
+        newsfeed = controller.newsfeed
+        respone = newsfeed[(newsfeed['pubDate'] > start) & (controller.newsfeed['pubDate'] <= end)]
         return make_response(jsonify(respone.to_dict(orient="index"))), 201
     else:
         abort(404)        
@@ -164,9 +134,9 @@ def rating():
 def limit_interval():
     #function to get start and end in python datatime 
     response = request.get_json()
-    start = datetime.datetime.strptime(response['start'], '%Y-%m-%dT%H:%M:%S.%fZ')
-    end = datetime.datetime.strptime(response['end'], '%Y-%m-%dT%H:%M:%S.%fZ')
-
+    start = datetime.strptime(response['start'], '%Y-%m-%dT%H:%M:%S.%fZ')
+    end = datetime.strptime(response['end'], '%Y-%m-%dT%H:%M:%S.%fZ')
+    newsfeed = controller.newsfeed
     newsid_lst = newsfeed[(newsfeed['pubDate'] > start) & (newsfeed['pubDate'] <= end)]["newsid"].tolist()
     response = {"newsid_lst": newsid_lst}
     return make_response(jsonify(response)), 201
@@ -174,26 +144,36 @@ def limit_interval():
 
 @app.errorhandler(400)
 def bad_request(e):
-    return render_template("/error.html", current_date=current_date,\
-                           top_newsfeed = top_newsfeed, latest_newsfeed = latest_newsfeed,err='400'), 403
+    return render_template("/error.html", \
+                           current_date = controller.current_date,\
+                           top_newsfeed = controller.top_newsfeed,\
+                           latest_newsfeed = controller.latest_newsfeed,err='400'), 403
 
 @app.errorhandler(401)
 def unauthorized(e):
-    return render_template("/error.html", current_date=current_date,\
-                           top_newsfeed = top_newsfeed, latest_newsfeed = latest_newsfeed,err='403'), 403
+    return render_template("/error.html", \
+                           current_date = controller.current_date,\
+                           top_newsfeed = controller.top_newsfeed,\
+                           latest_newsfeed = controller.latest_newsfeed,err='403'), 403
 
 @app.errorhandler(403)
 def forbidden(e):
-    return render_template("/error.html", current_date=current_date,\
-                           top_newsfeed = top_newsfeed, latest_newsfeed = latest_newsfeed,err='403'), 403
+    return render_template("/error.html", \
+                           current_date = controller.current_date,\
+                           top_newsfeed = controller.top_newsfeed,\
+                           latest_newsfeed = controller.latest_newsfeed,err='403'), 403
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("/error.html", current_date=current_date,\
-                           top_newsfeed = top_newsfeed, latest_newsfeed=latest_newsfeed,err='404'), 404
+    return render_template("/error.html", \
+                           current_date = controller.current_date,\
+                           top_newsfeed = controller.top_newsfeed,\
+                           latest_newsfeed = controller.latest_newsfeed,err='404'), 404
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template("/error.html", current_date=current_date,\
-                           top_newsfeed=top_newsfeed, latest_newsfeed=latest_newsfeed, err='500'), 500
+    return render_template("/error.html", \
+                           current_date = controller.current_date,\
+                           top_newsfeed = controller.top_newsfeed,\
+                           latest_newsfeed=controller.latest_newsfeed, err='500'), 500
 

@@ -1,57 +1,77 @@
 from .database import * #run from run.py add dot
 from .crawler import *
-
+from datetime import datetime
+import pandas as pd
 
 class Controller:
-    db = None    
-    def __init__(self, driver, server, db, user, pwd):
-        self.db = Database(driver, server, db, user, pwd)
+    _db = None    
+    _last_update_time = datetime.now()
+    _current_date = _last_update_time.strftime("%A, %d %B %Y")
+
+    _newsfeed = None
+    _latest_newsfeed = pd.DataFrame()
+    _top_newsfeed = pd.DataFrame()
+    _top_news = 0
+    
+    def __init__(self, driver, server, db_name, user, pwd, top_news):
+        self._db = Database(driver, server, db_name, user, pwd)
+        self._top_news = top_news
+        self.updateNews(top_news)
         
     def crawlXML(self, path):   
-        if self.db.getConnection():
+        if self._db.getConnection():
             crawler = NytimesCrawler(path)      
             df1 = crawler.crawlData()
-            self.db.bulkInsert("News", df1)
+            self._db.bulkInsert("News", df1)
             return True
         return False
     
     def getData(self, tableName):
         df = pd.DataFrame()        
-        if self.db.getConnection():
-            df = self.db.bulkSelect(tableName)
+        if self._db.getConnection():
+            df = self._db.bulkSelect(tableName)
         return df
     
+    def updateNews(self, top_news = None):
+        if not top_news:
+            top_news = self._top_news
+        self._newsfeed = self.getData("News")
+        if not self._newsfeed.empty:
+            self._newsfeed = self._newsfeed.sort_values(by=['pubDate'], ascending=False)
+            self._top_newsfeed = self._newsfeed.head(top_news)
+            self._latest_newsfeed = self._newsfeed.head(top_news)
+            print('Newsfeed updated')
+        return
+    
     def rateNews(self, newsid, rating, ip_addr):
-        if self.db.getConnection():
-            df = self.db.InsertUpdate("Ratings", 
-                                        {'date_rated':datetime.datetime.now(),
-                                        'newsid': newsid, 
-                                         'rating': rating,
-                                         'ip_addr':ip_addr}, 
-                                        {'ip_addr':ip_addr,
-                                         'newsid': newsid}
-                                      )        
+        if self._db.getConnection():
+            self._db.InsertOrUpdate("Ratings", 
+                                                    {'date_rated': datetime.now(),
+                                                    'newsid': newsid, 
+                                                     'rating': rating,
+                                                     'ip_addr':ip_addr}, 
+                                                    {'ip_addr':ip_addr,
+                                                     'newsid': newsid}
+                                                )
         return 
+
+    def verifyRefreshInterface(self, update_time_interval):    
+        diff = datetime.now() - self._last_update_time
+        if  (diff.total_seconds() > update_time_interval):
+            self.updateNews()
     
-if False:
-    newsid = 5
-    rating = 1
-    ip_addr = '0.0.0.0'
-    driver = '{ODBC Driver 17 for SQL Server}'
-    server = '127.0.0.1,1433'
-    db = 'TestDB'
-    user = 'sa'
-    pwd = 'Admin_password123'
-    conn_str = 'DRIVER={ODBC Driver 17 for SQL Server};\
-        SERVER=127.0.0.1,1433;\
-        DATABASE=TestDB;\
-        UID=sa;\
-        PWD=Admin_password123'
-    top_news = 5
-    update_time_interval = 3000
-    controller = Controller(driver, server, db, user, pwd)
-    controller.rateNews(newsid, rating, ip_addr)
-    
+    @property
+    def newsfeed(self):
+        return self._newsfeed
+    @property
+    def top_newsfeed(self):
+        return self._top_newsfeed
+    @property
+    def latest_newsfeed(self):
+        return self._latest_newsfeed
+    @property
+    def current_date(self):
+        return self._current_date
     
     
     

@@ -41,9 +41,13 @@ admin
                 <!--a href="#" class="btn btn-link">
                     Forgot Your Password?
                 </a-->
-                {% if login_err %}
-                <h1> {{login_err}}</h1>
-                {% endif %}   
+                {% with danger = get_flashed_messages(category_filter=["danger"]) %}
+	                {% if danger %}
+						{%- for message in danger %}
+	        		        <h1> {{message}}</h1>
+						{% endfor -%}
+				    {% endif %}
+				{% endwith %}
             </div>
           </form>
     </div>
