@@ -66,12 +66,13 @@ If you want to build and run containers in the background)
 ####  Features about web interface 
 * Imports news feeds from the resources (Europe.xml, Technology.xml)
 * Displays the imported feeds from the database
-* Users are able to rate individual news articles
 * Endpoint to news articles in JSON
 * Cronjob to update best-rated articles
-* Admin panel to read news articles with arbitrary publish date intervals and download in JSON (Limited to admin user)
-    * username: admin
-    * password: admin
+* Registration panel to register new users, encrypt and hash the password in the database
+* Login panel for non-admin users to read news articles, rate individual news articles and download in JSON
+    * username: tester  ; password: tester
+* Login panel for the admin user to rate individual, read news articles with arbitrary publish date intervals and download in JSON (Limited to admin user)
+    * username: admin  ; password: admin
     
     
 ####  Main architectural and design decisions 
@@ -85,7 +86,7 @@ Tables:
 ```
 Users: userid(int) [PRIMARY KEY], joindate(datetime), username(nvarchar, password(nvarchar)\
 News: newsid(int) [PRIMARY KEY], date_added(datetime), total_rating(int), category(category), creator(nvarchar), description(nvarchar), link(nvarchar), media_credit(nvarchar), media_description(nvarchar), media_url(nvarchar), pubDate(datetime), title(nvarchar)\
-Ratings: rateid(int) [PRIMARY KEY], date_rated(datetime), newsid(int) [Foreign Key: News(newsid)], rating(int), ip_addr(varchar)
+Ratings: rateid(int) [PRIMARY KEY], date_rated(datetime), newsid(int) [Foreign Key: News(newsid)], userid(int) [Foreign Key: Users(userid)],rating(int), ip_addr(varchar)
 ```
     
 For web app, docker-compose will use the Dockerfile to pull python:3.7.4 image, install ODBC for mssql and install requirements.txt. It will create a new image called "src_web". When creating the container of it, its entrypoint is set to bash a script to wait for the database created. Then it will take command to run "/interface_src/run.py". 
