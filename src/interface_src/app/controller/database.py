@@ -56,10 +56,11 @@ class Database:
         except Exception as e:
             print("Could not insert to database")
             print(e)
+            return False
         finally:
             cursor.commit()
             cursor.close()
-            print(table_name + ' is saved.')
+            return True
             
     def InsertOrUpdate(self, table_name, data, conditions):
         #args: string, dict, dict
@@ -87,10 +88,12 @@ class Database:
         except Exception as e:
             print("Could not insert to database")
             print(e)
+            return False
         finally:
             cursor.commit()
             cursor.close()
-        return
+            return True
+        return False
 
     def close(self):        
         self.cnxn.close()

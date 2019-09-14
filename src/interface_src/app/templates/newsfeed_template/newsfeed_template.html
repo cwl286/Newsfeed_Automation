@@ -37,12 +37,33 @@
           <div class="header_top_left">
             <ul class="top_nav">
               <li><a href="{{ url_for('index') }}">Home</a></li>
-              <li><a href="{{ url_for('admin') }}">Admin</a></li>
+				{%if not session['USERNAME'] %}
+              <li><a href="{{ url_for('registration') }}">Registration</a></li>
+				{% else %}
               <li><a href="{{ url_for('json_page')}}">JSON</a></li>
+				{% endif %}
+              <li class="current_date">{{current_date}}</li>
             </ul>
           </div>
           <div class="header_top_right">
-            <p>{{current_date}}</p>
+         	 {%if not session['USERNAME'] %}
+	            <form action="{{url_for('user_login')}}" method="POST" class="login_box">
+	                <label for="admin">USERNAME</label>
+	                <input type="text"  class="custom-form-control"  name="username" required>
+	                <label for="password" >PASSWORD</label>
+	                <input type="password"  class="custom-form-control"  autocomplete="on" name="password" required>
+	                <button type="submit" class="btn-primary">
+	                Login
+	                </button>
+	            </form>
+            {% else %}
+            	<form action="{{url_for('sign_out')}}" method="POST" class="login_box">
+	                <label>{{usr}}</label>
+	                <button type="submit" class="btn-primary">
+	                    Sign Out
+	                </button>
+		        </form>
+            {% endif %}
           </div>
         </div>
       </div>

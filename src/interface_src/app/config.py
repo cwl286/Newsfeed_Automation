@@ -15,6 +15,9 @@ class DevelopmentConfig(Config):
     HOST = '0.0.0.0'
     DEBUG = False
     SECRET_KEY = secrets.token_urlsafe(16)
+    # check for modifications of the template source and reload it automatically.
+    TEMPLATES_AUTO_RELOAD = True
+
     '''
     - Connection string for MSSQL server
         conn_str = 'DRIVER={ODBC Driver 17 for SQL Server};\
@@ -35,8 +38,8 @@ class DevelopmentConfig(Config):
     
     # Initialize all the newsfeed paths from the source
     current_dir = os.path.dirname(os.path.realpath(__file__))
-    XML1 = current_dir + "/web_crawling/Technology.xml"
-    XML2 = current_dir + "/web_crawling/Europe.xml"
+    XML1 = current_dir + "/controller/resources/Technology.xml"
+    XML2 = current_dir + "/controller/resources/Europe.xml"
     
     # Numbers of top hit to display in the web interface
     TOP_NEWS = 5

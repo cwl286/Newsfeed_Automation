@@ -1,0 +1,128 @@
+{% extends "newsfeed_template/newsfeed_template.html" %}
+
+
+{% block title %}
+registration
+{% endblock %}
+
+
+{% block contentSection_left_content%}
+    <div class="contact_area">
+        <h2>REGISTRATION</h2>  
+		{%if not session["USERNAME"] %}    
+        <form  id="jq-password" action="{{url_for('registration_check')}}" method="POST">
+            <div class="form-group row">
+                <label for="admin" class="col-md-4 col-form-label text-md-right">Username</label>
+                <div class="col-md-6">
+                    <input type="text" id="email_address" class="form-control" name="username" required autofocus>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                <div class="col-md-6">
+                    <input type="password" id="password2" class="form-control" name="password" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and between 8 and 20 characters" 
+                    required>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label for="password" class="col-md-4 col-form-label text-md-right">Repeat Password</label>
+                <div class="col-md-6">
+                    <input type="password" id="password3" class="form-control" name="password2"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and between 8 and 20 characters" 
+                    required>
+                    <span id="confirm-message3" class="confirm-message"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                    Register
+                </button>
+                <!--a href="#" class="btn btn-link">
+                    Forgot Your Password?
+                </a-->
+                {% with danger = get_flashed_messages(category_filter=["danger"]) %}
+	                {% if danger %}
+						{%- for message in danger %}
+	        		        <h1> {{message}}</h1>
+						{% endfor -%}
+				    {% endif %}
+				{% endwith %}
+            </div>
+          </form>
+		{% endif %}  
+		{% with success = get_flashed_messages(category_filter=["success"]) %}
+             {% if success %}
+				{%- for message in success %}
+ 		    	    <h1> {{message}}</h1>
+				{% endfor -%}
+    		{% endif %}
+		{% endwith %}
+    </div>
+{% endblock %}
+
+
+{% block contentSection_right_content %}
+        <div class="right_content">
+          <div id = "best_rated" class="single_sidebar">
+            <h2><span>BEST-RATED</span></h2>
+            <ul class="spost_nav">
+                {% for index, row in top_newsfeed.iterrows()%}
+                <li>
+                    <div class="media wow fadeInDown"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                      <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+          </div>
+        </div> 
+        <aside class="right_content"> 
+            <div id = "latest_post"  class="latest_post">
+              <h2><span>LATEST</span></h2>
+              <div class="latest_post_container">
+                <div id="prev-button"><i class="fa fa-chevron-up"></i></div>
+                <ul class="latest_postnav">
+                    {% for index, row in latest_newsfeed.iterrows() %}
+                    <li>
+                        <div class="media"> <a href={{ url_for('news', newsid=row['newsid']) }} class="media-left"> <img onerror="{{ url_for('static', filename='images/blank.gif') }}';" alt="Missing Image"  src="{{row['media_url']}}"> </a>
+                          <div class="media-body"> <a href={{ url_for('news', newsid=row['newsid']) }} class="catg_title"> {{row['title']}}</a> </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div id="next-button"><i class="fa  fa-chevron-down"></i></div>
+              </div>
+            </div>         
+        </aside>     
+{% endblock %}
+
+{% block script %}
+
+<script>
+$(function(){
+    $('#jq-password [type="password"]').keyup(function(){
+        var password = $('#password2');
+        var confirm  = $('#password3');
+        var message  = $('#confirm-message3');
+        var good_color = "#66cc66";
+        var bad_color  = "#ff6666";
+        if(password.val() == confirm.val()){
+            confirm.css('background-color', good_color);
+            message.css('color', good_color).html("Passwords Match!");
+        } else {
+            confirm.css('background-color', bad_color);
+            message.css('color', bad_color).html("Passwords Do Not Match!");
+        }
+    });
+});
+
+</script>
+
+
+{% endblock %}

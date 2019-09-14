@@ -13,7 +13,6 @@ while ! nc -w $TIMEOUT -z $REMOTEHOST $REMOTEPORT; do
 
 done
 
-
 # wait for SQL Server to come up
 echo Waiting for database $wait_time...
 sleep $wait_time

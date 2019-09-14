@@ -1,6 +1,7 @@
 from app import app, controller #import app object and all default variables
 from flask import Flask, flash, redirect, render_template, request, url_for, abort, jsonify, session, make_response
 from datetime import datetime
+import flask
         
 @app.route("/")
 def index():
@@ -11,53 +12,96 @@ def index():
                            latest_newsfeed = controller.latest_newsfeed,\
                            newsfeed = controller.newsfeed)
     
+@app.route("/registration")
+def registration():
+    controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])
+        
+    response = make_response(render_template("/registration.html", \
+                                             current_date = controller.current_date,\
+                                            newsfeed = controller.newsfeed,\
+                                            top_newsfeed = controller.top_newsfeed,\
+                                            latest_newsfeed = controller.latest_newsfeed)), 200
+    return response
+
+@app.route("/registration_check", methods=["POST"])
+def registration_check():
+    if request.method == "POST":
+        usr = request.form["username"]
+        pwd = request.form["password"]
+        pwd2 = request.form["password2"]
+        
+        if not pwd or not usr or not pwd2:
+            abort(400)
+        if controller.saveNewAccount(usr,pwd):
+            #keep the session about login
+            session["USERNAME"] = usr        
+            register_success ="Successfully register."
+            flash(register_success, "success")    
+            response = make_response(render_template("/registration.html", \
+                                                     current_date = controller.current_date,\
+                                                    newsfeed = controller.newsfeed,\
+                                                    top_newsfeed = controller.top_newsfeed,\
+                                                    latest_newsfeed=controller.latest_newsfeed)), 200
+            return response
+        else:
+            session.pop("USERNAME", None)
+            register_err ="The username does not exist or the password is incorrect."
+            flash(register_err, "danger")
+            return redirect(url_for('registration'))
+    else:
+        session.pop("USERNAME", None)
+        return redirect(url_for('registration'))
+    
+
+    
 @app.route("/admin")
 def admin():
-    controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])
-    login_err = ""
-    usr = ''
-    if  session.get('USERNAME'):
-        usr = session["USERNAME"]
-        
+    controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])        
     response = make_response(render_template("/admin.html", \
                                              current_date = controller.current_date,\
                                             newsfeed = controller.newsfeed,\
                                             top_newsfeed = controller.top_newsfeed,\
-                                            latest_newsfeed = controller.latest_newsfeed,\
-                                            usr = usr)), 200
+                                            latest_newsfeed = controller.latest_newsfeed)), 200
     return response
 
-@app.route("/login", methods=["POST"])
-def login():
+@app.route("/user_login", methods=["POST"])
+def user_login():
     if request.method == "POST":
         pwd = request.form["username"]
         usr = request.form["password"]
         
         if not pwd or not usr:
             abort(400)
-        users_df = controller.getData("Users")
-        if len(users_df[(users_df["password"] == pwd) & ( users_df["username"] == usr)].index) > 0:
+        userid = controller.verifyLogin(usr, pwd)
+        if userid:
             #keep the session about login
-            session["USERNAME"] = usr            
-            response = make_response(render_template("/admin.html", \
-                                                     current_date = controller.current_date,\
-                                                    newsfeed = controller.newsfeed,\
-                                                    top_newsfeed = controller.top_newsfeed,\
-latest_newsfeed=controller.latest_newsfeed, usr = usr)), 200
-            return response
+            session["USERNAME"] = usr  
+            session["USERID"] = userid  
+            if usr in 'admin' and 'admin' in usr:          
+                #Admin usr
+                response = make_response(render_template("/admin.html", \
+                                                         current_date = controller.current_date,\
+                                                        newsfeed = controller.newsfeed,\
+                                                        top_newsfeed = controller.top_newsfeed,\
+                                                        latest_newsfeed=controller.latest_newsfeed)), 200
+                return response
+            else:
+                #Other users
+                return redirect(url_for('index'))
         else:
             session.pop("USERNAME", None)
             login_err ="The username does not exist or the password is incorrect."
             flash(login_err, "danger")
-            return redirect(url_for('admin'))
+            return redirect(url_for('registration'))
     else:
         session.pop("USERNAME", None)
-        return redirect(url_for('admin'))
+        return redirect(url_for('registration'))
     
 @app.route("/sign_out", methods=["GET", "POST"])
 def sign_out():
     session.pop("USERNAME", None)
-    return redirect(url_for('admin', login_err=None))
+    session.pop("USERID", None)
+    return redirect(url_for('index'))
         
 
 @app.route("/json_page")
@@ -72,12 +116,15 @@ def json_page():
 @app.route('/news', methods=['GET'])
 def news():
     controller.verifyRefreshInterface(app.config["UPDATE_TIME_INTERVAL"])
-    newsfeed = controller.getData("News")
-    error = None
-    if request.method == 'GET':
+    
+    usr = ''
+    if session.get('USERNAME'):
+        usr = session["USERNAME"]
+    if request.method == 'GET' and usr:
         newsid = request.args.get('newsid')
         if newsid:
             newsid = int(newsid)
+            newsfeed = controller.getData("News")
             targetnews=newsfeed[newsfeed.newsid == newsid]
             if targetnews.shape[0] > 0:
                 title = targetnews["title"].values[0]
@@ -97,8 +144,13 @@ def news():
                                                     description = description,\
                                                     pubDate = pubDate, media_url = media_url, \
                                                     link = link, newsid = newsid)
-    return redirect(url_for('404', current_date = controller.current_date,\
-                           top_news=top_news, newsfeed=newsfeed))
+    elif not usr:
+        login_err = "Please login or register to read the contents."
+        flash(login_err, "danger")
+        return redirect(url_for("registration"))
+    else:
+        return redirect(url_for('404', current_date = controller.current_date,\
+                           top_news = controller.top_news, newsfeed = controller.newsfeed))
 
 
 
@@ -123,11 +175,18 @@ def get_tasks(task):
 
 @app.route('/rating/', methods=["POST"])
 def rating():
-    #function to get Ajax 
-    response = request.get_json()
-    client_addr = request.environ['REMOTE_ADDR']
-    controller.rateNews(response["newsid"], response["rating"], client_addr)
-    return make_response(jsonify(response)), 201
+    #function to get Ajax for rating
+    
+    userid = ''
+    if session.get('USERID'):
+        userid = session["USERID"]
+        response = request.get_json()
+        client_addr = request.environ['REMOTE_ADDR']
+        controller.rateNews(response["newsid"], response["rating"], userid, client_addr)
+        return make_response(jsonify(response)), 201
+    else:
+        return make_response(jsonify({"error" : "no user"})), 400
+        
 
 
 @app.route('/limit_interval/', methods=["POST"])

@@ -1,8 +1,9 @@
 from .database import * #run from run.py add dot
 from .crawler import *
+from .encryption import Encryption
 from datetime import datetime
 import pandas as pd
-
+    
 class Controller:
     _db = None    
     _last_update_time = datetime.now()
@@ -12,17 +13,18 @@ class Controller:
     _latest_newsfeed = pd.DataFrame()
     _top_newsfeed = pd.DataFrame()
     _top_news = 0
+    encryption = Encryption()
     
     def __init__(self, driver, server, db_name, user, pwd, top_news):
         self._db = Database(driver, server, db_name, user, pwd)
         self._top_news = top_news
-        self.updateNews(top_news)
         
     def crawlXML(self, path):   
         if self._db.getConnection():
             crawler = NytimesCrawler(path)      
             df1 = crawler.crawlData()
             self._db.bulkInsert("News", df1)
+            print("News is saved:  ", path)
             return True
         return False
     
@@ -43,14 +45,15 @@ class Controller:
             print('Newsfeed updated')
         return
     
-    def rateNews(self, newsid, rating, ip_addr):
+    def rateNews(self, newsid, rating, userid, ip_addr):
         if self._db.getConnection():
             self._db.InsertOrUpdate("Ratings", 
                                                     {'date_rated': datetime.now(),
                                                     'newsid': newsid, 
+                                                    'userid': userid, 
                                                      'rating': rating,
                                                      'ip_addr':ip_addr}, 
-                                                    {'ip_addr':ip_addr,
+                                                    {'userid':userid,
                                                      'newsid': newsid}
                                                 )
         return 
@@ -59,6 +62,33 @@ class Controller:
         diff = datetime.now() - self._last_update_time
         if  (diff.total_seconds() > update_time_interval):
             self.updateNews()
+            
+    def verifyLogin(self, usr, pwd):
+        users_df = self.getData("Users")
+        if not users_df.empty:
+            user_df = users_df[( users_df["username"] == usr)]
+            if len(user_df.index) > 0:
+                stored_password = user_df.iloc[0]['password']
+                if(self.encryption.verify_password(stored_password, pwd)):
+                    return str(user_df.iloc[0]['userid'])
+        return None
+    
+    def saveNewAccount(self, usr, pwd):
+        users_df = self.getData("Users")
+        user_df = users_df[( users_df["username"] == usr)]
+        result = False
+        if len(user_df.index) == 0:
+            hash_password = self.encryption.hash_password(pwd)
+            if self._db.getConnection():
+                result =  self._db.InsertOrUpdate("Users", 
+                                                                        {'username': usr,
+                                                                        'password': hash_password,
+                                                                        'joindate': datetime.now()
+                                                                         }, 
+                                                                        {'username':usr
+                                                                         }
+                                                                    )
+        return result
     
     @property
     def newsfeed(self):
@@ -73,5 +103,6 @@ class Controller:
     def current_date(self):
         return self._current_date
     
+
     
     

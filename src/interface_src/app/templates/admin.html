@@ -6,10 +6,11 @@ admin
 {% endblock %}
 
 
-{% block contentSection_left_content%}{%if not usr %}
+{% block contentSection_left_content%}
+	{%if not session["USERNAME"]  %}
     <div class="contact_area">
-        <h2>LOGIN</h2>      
-        <form action="{{url_for('login')}}" method="POST">
+        <h2>ADMIN</h2>      
+        <form action="{{url_for('user_login')}}" method="POST">
             <div class="form-group row">
                 <label for="admin" class="col-md-4 col-form-label text-md-right">Admin Account</label>
                 <div class="col-md-6">
@@ -86,7 +87,7 @@ admin
         </form>
     </div>
     {% endif %}   
-    {%if usr %}
+    {%if session["USERNAME"] %}
     <h2><span>News Feed</span></h2>   
 
     <div class="single_post_content_left">
