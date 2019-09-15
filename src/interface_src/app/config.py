@@ -43,8 +43,8 @@ class DevelopmentConfig(Config):
     
     # Numbers of top hit to display in the web interface
     TOP_NEWS = 5
-    # Millisecond to wait and refresh the web interface
-    UPDATE_TIME_INTERVAL = 3000
+    # Seconds to wait and refresh the web interface
+    UPDATE_TIME_INTERVAL = 300
 
 class DockerConfig(DevelopmentConfig):
     SERVER = 'db,1433' 

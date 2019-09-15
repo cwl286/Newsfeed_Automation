@@ -38,12 +38,14 @@ class Controller:
         if not top_news:
             top_news = self._top_news
         self._newsfeed = self.getData("News")
+        print(self._newsfeed.shape)
         if not self._newsfeed.empty:
             self._newsfeed = self._newsfeed.sort_values(by=['pubDate'], ascending=False)
             self._top_newsfeed = self._newsfeed.head(top_news)
             self._latest_newsfeed = self._newsfeed.head(top_news)
             print('Newsfeed updated')
-        return
+            return True
+        return  False
     
     def rateNews(self, newsid, rating, userid, ip_addr):
         if self._db.getConnection():
@@ -60,8 +62,11 @@ class Controller:
 
     def verifyRefreshInterface(self, update_time_interval):    
         diff = datetime.now() - self._last_update_time
+        print(diff.total_seconds() > update_time_interval)
         if  (diff.total_seconds() > update_time_interval):
-            self.updateNews()
+            print(' Time to refresh interface.')
+            if self.updateNews():
+                print(' Interface refresh')
             
     def verifyLogin(self, usr, pwd):
         users_df = self.getData("Users")

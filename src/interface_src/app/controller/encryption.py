@@ -23,4 +23,3 @@ class Encryption:
         pwdhash = binascii.hexlify(pwdhash).decode('ascii')
         return pwdhash == stored_password
     
-print(Encryption().hash_password("tester"))
