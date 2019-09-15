@@ -78,13 +78,9 @@ def user_login():
             session["USERNAME"] = usr  
             session["USERID"] = userid  
             if usr in 'admin' and 'admin' in usr:          
-                #Admin usr
-                response = make_response(render_template("/admin.html", \
-                                                         current_date = controller.current_date,\
-                                                        newsfeed = controller.newsfeed,\
-                                                        top_newsfeed = controller.top_newsfeed,\
-                                                        latest_newsfeed=controller.latest_newsfeed)), 200
-                return response
+                #Other users
+                session["isAdmin"] = True
+                return redirect(url_for('admin'))
             else:
                 #Other users
                 return redirect(url_for('index'))
@@ -101,6 +97,7 @@ def user_login():
 def sign_out():
     session.pop("USERNAME", None)
     session.pop("USERID", None)
+    session.pop("isAdmin", None)
     return redirect(url_for('index'))
         
 

@@ -25,6 +25,7 @@ class Controller:
             df1 = crawler.crawlData()
             self._db.bulkInsert("News", df1)
             print("News is saved:  ", path)
+            self._db.closeConnection()
             return True
         return False
     
@@ -32,13 +33,13 @@ class Controller:
         df = pd.DataFrame()        
         if self._db.getConnection():
             df = self._db.bulkSelect(tableName)
+            self._db.closeConnection()
         return df
     
     def updateNews(self, top_news = None):
         if not top_news:
             top_news = self._top_news
         self._newsfeed = self.getData("News")
-        print(self._newsfeed.shape)
         if not self._newsfeed.empty:
             self._newsfeed = self._newsfeed.sort_values(by=['pubDate'], ascending=False)
             self._top_newsfeed = self._newsfeed.head(top_news)
@@ -58,11 +59,11 @@ class Controller:
                                                     {'userid':userid,
                                                      'newsid': newsid}
                                                 )
+            self._db.closeConnection()
         return 
 
     def verifyRefreshInterface(self, update_time_interval):    
         diff = datetime.now() - self._last_update_time
-        print(diff.total_seconds() > update_time_interval)
         if  (diff.total_seconds() > update_time_interval):
             print(' Time to refresh interface.')
             if self.updateNews():
@@ -93,6 +94,7 @@ class Controller:
                                                                         {'username':usr
                                                                          }
                                                                     )
+            self._db.closeConnection()
         return result
     
     @property

@@ -39,6 +39,9 @@
               <li><a href="{{ url_for('index') }}">Home</a></li>
 				{%if not session['USERNAME'] %}
               <li><a href="{{ url_for('registration') }}">Registration</a></li>
+            	{% elif session["isAdmin"] == True %}
+              <li><a href="{{ url_for('json_page')}}">JSON</a></li>
+              <li><a href="{{ url_for('admin') }}">Admin</a></li>
 				{% else %}
               <li><a href="{{ url_for('json_page')}}">JSON</a></li>
 				{% endif %}
