@@ -155,13 +155,13 @@ def news():
 def get_tasks(task):
     if not task:
         abort(404)
-    elif task in "latest": 
+    elif task in "latest" and session.get('USERNAME'): 
         return make_response(jsonify(controller.latest_newsfeed.to_dict(orient="index"))), 201
-    elif task in "best_rated": 
+    elif task in "best_rated" and session.get('USERNAME'): 
         return make_response(jsonify(controller.top_newsfeed.to_dict(orient="index"))), 201
-    elif task in "all": 
+    elif task in "all" and session.get('USERNAME'): 
         return make_response(jsonify(controller.newsfeed.to_dict(orient="index"))), 201
-    elif task in "interval" and request.method == 'GET' and session.get('USERNAME'):
+    elif task in "interval" and request.method == 'GET' and session.get('isAdmin'):
         start = datetime.strptime(request.args.get('start'), '%Y-%m-%dT%H:%M:%S.%fZ')
         end = datetime.strptime(request.args.get('end'), '%Y-%m-%dT%H:%M:%S.%fZ')
         newsfeed = controller.newsfeed
