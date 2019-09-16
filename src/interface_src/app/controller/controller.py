@@ -29,10 +29,10 @@ class Controller:
             return True
         return False
     
-    def getData(self, tableName):
+    def getData(self, tableName, conditions=None):
         df = pd.DataFrame()        
         if self._db.getConnection():
-            df = self._db.bulkSelect(tableName)
+            df = self._db.bulkSelect(tableName, conditions)
             self._db.closeConnection()
         return df
     
@@ -70,9 +70,8 @@ class Controller:
                 print(' Interface refresh')
             
     def verifyLogin(self, usr, pwd):
-        users_df = self.getData("Users")
-        if not users_df.empty:
-            user_df = users_df[( users_df["username"] == usr)]
+        user_df = self.getData("Users", {"username":usr})
+        if not user_df.empty:
             if len(user_df.index) > 0:
                 stored_password = user_df.iloc[0]['password']
                 if(self.encryption.verify_password(stored_password, pwd)):

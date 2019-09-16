@@ -67,8 +67,8 @@ def admin():
 @app.route("/user_login", methods=["POST"])
 def user_login():
     if request.method == "POST":
-        pwd = request.form["username"]
-        usr = request.form["password"]
+        usr = request.form["username"]
+        pwd = request.form["password"]
         
         if not pwd or not usr:
             abort(400)

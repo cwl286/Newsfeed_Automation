@@ -17,12 +17,11 @@ class Database:
         self._db_name = db_name
         self._user = user
         self._pwd = pwd
-        
             
     def getConnection(self):
         #drivers = [item for item in pyodbc.drivers()]    
         try:
-            conn_str = f'DRIVER={self._driver};SERVER={self._server};DATABASE={self._db_name};UID={self._user};PWD={self._pwd}'
+            conn_str = f"DRIVER={self._driver};SERVER={self._server};DATABASE={self._db_name};UID={self._user};PWD={self._pwd}"
             self._cnxn = pyodbc.connect(conn_str)
         except Exception as e:
             print("Could not connect to database")
@@ -30,16 +29,26 @@ class Database:
             return False
         return True
     
-    def bulkSelect(self, table_name): 
-        #args: string
+    def bulkSelect(self, table_name, equal_conditions = None): 
+        #args: string, dict
         #return dataframe
         df = pd.DataFrame()      
         if not self._cnxn:
             return df          
         try:
-            query = f"SELECT * FROM dbo.{table_name}"
-            df = pd.read_sql(query, self._cnxn)
-            return df   
+            if equal_conditions:
+                clauses = [ str(k) + f"={'?'}" for k, v in zip(list(equal_conditions.keys()), list(equal_conditions.values()))]
+                args = tuple(equal_conditions.values())
+                query = f"""
+                            SELECT * FROM dbo.{table_name} where { " and ".join(c for c in clauses)}
+                            """
+                df = pd.read_sql(sql=query, con=self._cnxn, params=args)
+            else:
+                query = f"""
+                            SELECT * FROM dbo.{table_name}
+                            """
+                df = pd.read_sql(sql=query, con=self._cnxn)
+                
         except Exception as e:
             print("Could not select a table from database")
             print(e)
@@ -52,8 +61,10 @@ class Database:
             return False          
         try:
             headers = list(df)            
-            query = f"INSERT INTO dbo.{table_name} ({','.join(headers)})" +\
-                    f"values({'?' + ',?' * (len(headers) - 1)})"    
+            query = f"""
+                        INSERT INTO dbo.{table_name} ({','.join(headers)})
+                        values({'?' + ',?' * (len(headers) - 1)})
+                         """
             cursor = self._cnxn.cursor()
             for index,row in df.iterrows():
                 args = tuple(row)
@@ -77,18 +88,21 @@ class Database:
         query = ""
         args = []
         cursor = None
-        if not self.cnxn:
+        if not self._cnxn:
             return False
         try:     
             if conditions:                
-                conditions_keys = list(conditions.keys())
-                my_dict = [ str(k) + "=" + str(v) for k, v in zip(list(data.keys()), list(data.values()))]
-                query = query + f"UPDATE dbo.{table_name} set {'=?,'.join(data.keys())}=? WHERE " +\
-                        f" {'=? and '.join(conditions.keys())}=?"  +\
-                        f" IF @@ROWCOUNT=0 "                          
-                args = args + list(data.values()) + list(conditions.values())                        
-            query = query + f" INSERT INTO dbo.{table_name} ({','.join(data.keys())})" +\
-                    f" values({'?' + ',?' * (len(data.keys()) - 1)});"     
+                #Update statement
+                query = query + \
+                        f"""UPDATE dbo.{table_name} set {'=?,'.join(data.keys())}=? WHERE {'=? and '.join(conditions.keys())}=?
+                        IF @@ROWCOUNT=0 """                       
+                args = args + list(data.values()) + list(conditions.values())                
+            #Insert statement        
+            query = query + \
+                    f""" 
+                    INSERT INTO dbo.{table_name} ({','.join(data.keys())})
+                    values({'?' + ',?' * (len(data.keys()) - 1)});
+                    """
             args = args + list(data.values())
             cursor = self._cnxn.cursor()
             cursor.execute(query, args)
@@ -106,58 +120,3 @@ class Database:
         self._cnxn.close()
         
         
-class ORM_database:
-    _engine = None
-    _driver = ''
-    _server = ''
-    _db_name = ''
-    _user = ''
-    _pwd = ''
-    
-    def __init__(self, driver, server, db_name, user, pwd):
-        self._driver = driver
-        self._server = server
-        self._db_name = db_name
-        self._user = user
-        self._pwd = pwd
-            
-    def createEngine(self):
-        #drivers = [item for item in pyodbc.drivers()]    
-        try:
-            conn_str = f'DRIVER={self._driver};SERVER={self._server};DATABASE={self._db_name};UID={self._user};PWD={self._pwd}'
-            params = urllib.parse.quote_plus(conn_str)
-            self._engine = db.create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
-        except Exception as e:
-            print("Could not create engine")
-            print(e)        
-            return False
-        return True
-    
-    def querying(self, table_name):
-        #args: string
-        #return dataframe
-        df = pd.DataFrame()      
-        if not self._engine:
-            return df          
-        try:
-            conn = self._engine.connect()
-            metadata = db.MetaData()
-            table = db.Table(table_name, metadata, autoload=True, autoload_with=self._engine)
-            query = db.select([table])
-            ResultProxy = conn.execute(query)
-            ResultSet = ResultProxy.fetchall()
-            #Convert results to dataframe
-            df = pd.DataFrame(ResultSet)
-            df.columns = ResultSet[0].keys()
-            
-            ResultProxy.close()
-            conn.close()
-            return df   
-        except Exception as e:
-            print("Could not select a table from database")
-            print(e)
-        return df
-    
-    def closeConnection(self):        
-            self._engine.dispose()
-     
