@@ -1,9 +1,11 @@
 import pandas as pd
-import sqlalchemy as db
 import pyodbc
-import urllib
+import datetime as datetime
 
 class Database:
+    '''
+    pyodbc method
+    '''
     _cnxn = None
     _driver = ''
     _server = ''
@@ -20,21 +22,23 @@ class Database:
             
     def getConnection(self):
         #drivers = [item for item in pyodbc.drivers()]    
+        isSuccess = True
         try:
             conn_str = f"DRIVER={self._driver};SERVER={self._server};DATABASE={self._db_name};UID={self._user};PWD={self._pwd}"
             self._cnxn = pyodbc.connect(conn_str)
         except Exception as e:
             print("Could not connect to database")
-            print(e)        
-            return False
-        return True
+            print(e)       
+            isSuccess = False
+        return isSuccess
     
-    def bulkSelect(self, table_name, equal_conditions = None): 
+    def querying(self, table_name, equal_conditions = None): 
         #args: string, dict
         #return dataframe
         df = pd.DataFrame()      
         if not self._cnxn:
-            return df          
+            return df         
+        isSuccess = True 
         try:
             if equal_conditions:
                 clauses = [ str(k) + f"={'?'}" for k, v in zip(list(equal_conditions.keys()), list(equal_conditions.values()))]
@@ -52,11 +56,13 @@ class Database:
         except Exception as e:
             print("Could not select a table from database")
             print(e)
-        return df
+            isSuccess = False
+        return isSuccess
             
     def bulkInsert(self, table_name, df):    
         #args: string, dataframe
-        cursor = None
+        cursor = None  
+        isSuccess = True 
         if not self._cnxn:
             return False          
         try:
@@ -71,14 +77,14 @@ class Database:
                 cursor.execute(query, args)
         except Exception as e:
             print("Could not insert to database")
-            print(e)
-            return False
+            print(e)  
+            isSuccess = False 
         finally:
             cursor.commit()
             cursor.close()
-            return True
+        return isSuccess  
             
-    def InsertOrUpdate(self, table_name, data, conditions):
+    def insertOrUpdate(self, table_name, data, conditions):
         #args: string, dict, dict
         '''        
         update Ratings set rating='2' where ip_addr =  '0.0.0.1'
@@ -88,6 +94,7 @@ class Database:
         query = ""
         args = []
         cursor = None
+        isSuccess = True 
         if not self._cnxn:
             return False
         try:     
@@ -109,14 +116,164 @@ class Database:
         except Exception as e:
             print("Could not insert to database")
             print(e)
-            return False
+            isSuccess = False 
         finally:
             cursor.commit()
             cursor.close()
-            return True
-        return False
+        return isSuccess
 
     def closeConnection(self):        
         self._cnxn.close()
         
         
+import sqlalchemy as db
+import urllib
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+
+class ORM_database:
+    '''
+    sqlalchemy method
+    '''
+    #Reference: https://www.pythonsheets.com/notes/python-sqlalchemy.html
+    _engine = None
+    _driver = ''
+    _server = ''
+    _db_name = ''
+    _user = ''
+    _pwd = ''
+    
+    def __init__(self, driver, server, db_name, user, pwd):
+        self._driver = driver
+        self._server = server
+        self._db_name = db_name
+        self._user = user
+        self._pwd = pwd
+            
+    def getConnection(self):
+        isSuccess = True 
+        try:
+            conn_str = f'DRIVER={self._driver};SERVER={self._server};DATABASE={self._db_name};UID={self._user};PWD={self._pwd}'
+            params = urllib.parse.quote_plus(conn_str)
+            self._engine = db.create_engine("mssql+pyodbc:///?odbc_connect=%s" % params)
+        except Exception as e:
+            print("Could not create engine")
+            print(e)     
+            isSuccess = False 
+        
+        return isSuccess
+    
+    def querying(self, table_name, conditions=None):
+        '''
+        args: str, dict
+        simple: select * from table_name (where ...)
+        Reflection approach
+        return dataframe
+        '''
+        df = pd.DataFrame()      
+        conn, session = None, None
+        isSuccess = True 
+        if not self._engine:
+            return df          
+        try:
+            # To reflect an existing database into a new model.
+            #Generating Mappings from an Existing MetaData
+            conn = self._engine.connect()
+            # produce our MetaData object
+            metadata = db.MetaData()
+            # reflect it ourselves from a database
+            metadata.reflect(self._engine) #.reflect(self._engine, only=['Users', 'News'])
+            # mapped classes are ready
+            table = db.Table(table_name, metadata, autoload=True, autoload_with=self._engine)
+            session = Session(self._engine)
+            query = ''
+            if conditions:
+                query = session.query(table).filter_by(**conditions)
+            else:
+                query = session.query(table)
+            #Convert to dataframe
+            df = pd.read_sql(sql = query.statement, con = session.bind)
+        except Exception as e:
+            print("Could not select a table from database error:  ", e)
+        finally:
+            if session:
+                session.close()
+            if conn: 
+                conn.close()
+        return df
+    
+    def insert(self, table_name, df):
+        '''
+        df = values
+        return True or false
+        '''   
+        conn, session = None, None
+        isSuccess = True 
+        if not self._engine:
+            return False  
+        # To reflect an existing database into a new model.
+        #Generating Mappings from an Existing MetaData
+        conn = self._engine.connect()
+        args_list = df.to_dict('records')
+        try:
+            # produce our MetaData object
+            metadata = db.MetaData()
+            # reflect it ourselves from a database
+            metadata.reflect(self._engine) #.reflect(self._engine, only=['Users', 'News'])
+            # mapped classes are ready
+            table = db.Table(table_name, metadata, autoload=True, autoload_with=self._engine) 
+            conn.execute(table.insert(), args_list)
+        except Exception as e:
+            print("Could not insert a table from database error:  ", e)
+            isSuccess = False
+        finally:
+            if session:
+                session.close()
+            if conn: 
+                conn.close()
+        return isSuccess
+    
+    def insertOrUpdate(self, table_name, data, conditions):
+        '''
+        table_name = str
+        data, conditions = dict
+        return True or false
+        '''   
+        if not self._engine:
+            return False  
+        # To reflect an existing database into a new model.
+        #Generating Mappings from an Existing MetaData
+        isSuccess = True
+        conn, session = None, None
+        
+        try:
+            if self.querying(table_name, conditions).empty:
+                #insert:
+                self.insert(table_name, pd.DataFrame([data], columns=data.keys()))
+            else:
+                #update
+                conn = self._engine.connect()
+                # produce our MetaData object
+                metadata = db.MetaData()
+                # reflect it ourselves from a database
+                metadata.reflect(self._engine) #.reflect(self._engine, only=['Users', 'News'])
+                # mapped classes are ready
+                table = db.Table(table_name, metadata, autoload=True, autoload_with=self._engine)    
+                session = Session(self._engine)
+                  
+                where_clauses = [db.text(str(item[0]) + "=" + str(item[1])) for item in conditions.items()]
+                session.execute(db.update(table).where(db.and_(*where_clauses)).values(**data))
+                session.commit()
+                
+        except Exception as e:
+            print("Could not insert a table from database error:  ", e)
+            isSuccess = False
+        finally:
+            if session:
+                session.close()
+            if conn: 
+                conn.close()
+        return isSuccess
+        
+    def closeConnection(self):        
+        self._engine.dispose()

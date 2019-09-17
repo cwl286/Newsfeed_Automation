@@ -1,4 +1,4 @@
-from .database import * #run from run.py add dot
+from .database import ORM_database #run from run.py add dot
 from .crawler import *
 from .encryption import Encryption
 from datetime import datetime
@@ -16,14 +16,14 @@ class Controller:
     encryption = Encryption()
     
     def __init__(self, driver, server, db_name, user, pwd, top_news):
-        self._db = Database(driver, server, db_name, user, pwd)
+        self._db = ORM_database(driver, server, db_name, user, pwd)
         self._top_news = top_news
         
     def crawlXML(self, path):   
         if self._db.getConnection():
             crawler = NytimesCrawler(path)      
             df1 = crawler.crawlData()
-            self._db.bulkInsert("News", df1)
+            self._db.insert("News", df1)
             print("News is saved:  ", path)
             self._db.closeConnection()
             return True
@@ -32,7 +32,7 @@ class Controller:
     def getData(self, tableName, conditions=None):
         df = pd.DataFrame()        
         if self._db.getConnection():
-            df = self._db.bulkSelect(tableName, conditions)
+            df = self._db.querying(tableName, conditions)
             self._db.closeConnection()
         return df
     
@@ -50,7 +50,7 @@ class Controller:
     
     def rateNews(self, newsid, rating, userid, ip_addr):
         if self._db.getConnection():
-            self._db.InsertOrUpdate("Ratings", 
+            self._db.insertOrUpdate("Ratings", 
                                                     {'date_rated': datetime.now(),
                                                     'newsid': newsid, 
                                                     'userid': userid, 
@@ -85,7 +85,7 @@ class Controller:
         if len(user_df.index) == 0:
             hash_password = self.encryption.hash_password(pwd)
             if self._db.getConnection():
-                result =  self._db.InsertOrUpdate("Users", 
+                result =  self._db.insertOrUpdate("Users", 
                                                                         {'username': usr,
                                                                         'password': hash_password,
                                                                         'joindate': datetime.now()
