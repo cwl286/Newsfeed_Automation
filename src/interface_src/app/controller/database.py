@@ -2,6 +2,7 @@ import pandas as pd
 import pyodbc
 import datetime as datetime
 
+
 class Database:
     '''
     pyodbc method
@@ -124,7 +125,7 @@ class Database:
 
     def closeConnection(self):        
         self._cnxn.close()
-        
+
         
 import sqlalchemy as db
 import urllib
@@ -177,7 +178,7 @@ class ORM_database:
             return df          
         try:
             # To reflect an existing database into a new model.
-            #Generating Mappings from an Existing MetaData
+            # Generating Mappings from an Existing MetaData
             conn = self._engine.connect()
             # produce our MetaData object
             metadata = db.MetaData()
@@ -277,3 +278,131 @@ class ORM_database:
         
     def closeConnection(self):        
         self._engine.dispose()
+
+
+from elasticsearch import Elasticsearch
+from elasticsearch.helpers import bulk
+
+class ES_server:
+    _es = None
+    def __init__(self, nodes_lst):
+        '''
+        Elasticsearch low-level client. Provides a straightforward mapping from Python to ES REST endpoints.
+        '''
+        es = None
+        try:
+            es  = Elasticsearch(nodes_lst)
+        except Exception as e:
+            print("Could not create Elasticsearch:  ", e)
+        finally:
+            self._es = es
+    
+    def querying(self, index, body={"query": {"match_all": {}}}):
+        '''
+        Execute a search query and get back search hits that match the query.
+        '''
+        df = pd.DataFrame()
+        
+        if not self._es:
+            return df
+        try:
+            res = self._es.search(index=index, body=body)
+            lst = [{"id":x["_id"], **x["_source"]} for x in res["hits"]["hits"]]
+            df = pd.DataFrame(lst)
+        except Exception as e:
+            print("Could not query Elasticsearch:  ", e)
+        finally:
+            return df
+        return df
+           
+    def createIndex(self, index, body={}):
+        success = False
+        if not self._es:
+            return success
+        try:
+            self._es.indices.create(index=index,body=body)
+        except Exception as e:
+            print("Could not create index Elasticsearch:  ", e)
+        finally:
+            success = True
+        return success
+        
+    def bulkInsert(self, index, df, docType):    
+        #args: string, dataframe , string
+        isSuccess = False 
+        if not self._es:
+            return isSuccess   
+        def gendata(documents):
+            for i in range(0, len(documents)):
+                print(documents[i])
+                yield {
+                    "_index": "employees",
+                    "_type": "employee",
+                    "_id": f"{i}",
+                    "doc": [documents[i]]
+                }
+        try:
+            # Bulk inserting documents. Each row in the DataFrame will be a document in ElasticSearch
+            documents = df.to_dict(orient='records')
+            #bulk(self._es, documents, index=index,doc_type=docType, raise_on_error=True)
+            bulk(self._es, gendata(documents))
+        except Exception as e:
+            print("Could not bulk insert to Elasticsearch:", e)
+            isSuccess = False 
+        finally:
+            isSuccess = False
+        return isSuccess  
+    
+    def insertDict(self, index, doc, docType=None): 
+        #args: string, dict , string
+        res=""
+        if not self._es:
+            return res
+        try:
+            if docType:
+                res = self._es.index(index=index,body=doc, doc_type=docType, refresh=True)
+            else:
+                res = self._es.index(index=index,body=doc, refresh=True)
+        except Exception as e:
+            print("Could not index Elasticsearch:  ", e)
+        finally:
+            print(res['result'])
+            return res
+        return res
+        
+if True:
+    doc = {
+        'author': 'kimchy',
+        'text': 'Elasticsearch: cool. bonsai cool.',
+        'timestamp': datetime.datetime.now(),
+    }
+    x = 'test'
+    es = ES_server(['http://localhost:9200/'])
+    
+    data = [['tom', 11], ['nick', 12], ['juli', 14]] 
+    df = pd.DataFrame(data, columns = ['Name', 'Age']) 
+    es.bulkInsert(index="employees", df=df, docType="employee")
+    print(es.querying("employees"))
+    
+    mapping = {
+                       "mappings":{
+                          "properties":{
+                                 "name": { "type":"text"},
+                                 "date":{ "type":"date"},
+                                 "balance":{ "type":"double"},
+                                 "liability":{ "type":"double"}
+                          }
+                       }
+                     }
+    
+    #es.createIndex("test5")
+    doc = {
+        'name': 'kimchy',
+        'date': datetime.datetime.now(),
+        'balance': 11,
+        'liability': 12
+    }
+    
+    #es.insertDict("test4", doc, "_doc")
+    
+    

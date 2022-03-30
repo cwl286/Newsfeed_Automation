@@ -31,6 +31,7 @@ class DevelopmentConfig(Config):
     '''
     DRIVER = '{ODBC Driver 17 for SQL Server}'
     #SERVER = 'db,1433' 
+    #SERVER = '127.0.0.1,1433'
     SERVER = '127.0.0.1,1433'
     DB_NAME = 'TestDB'
     USER = 'sa'
